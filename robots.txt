@@ -1,0 +1,18 @@
+# ===== robots.txt for ATI (Advanced Technology Inc.) =====
+# 이 파일은 사이트 최상위(루트)에 위치해야 합니다.  예) https://example.com/robots.txt
+# 도메인 확정 후 아래 Sitemap 주소의 example.com 을 실제 도메인으로 교체하세요.
+
+# 모든 검색엔진 로봇에 전체 허용
+User-agent: *
+Allow: /
+
+# 네이버 검색 로봇(Yeti) 명시적 허용 (네이버 서치어드바이저 등록 대비)
+User-agent: Yeti
+Allow: /
+
+# 구글 검색 로봇 명시적 허용 (구글 서치콘솔 등록 대비)
+User-agent: Googlebot
+Allow: /
+
+# 사이트맵 위치 (반드시 절대경로)
+Sitemap: https://example.com/sitemap.xml

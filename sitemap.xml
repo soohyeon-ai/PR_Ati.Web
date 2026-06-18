@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml for ATI (Advanced Technology Inc.)
+  - 사이트 최상위(루트)에 위치시키세요.  예) https://example.com/sitemap.xml
+  - 도메인 확정 후 아래 <loc> 의 example.com 을 실제 도메인으로 교체하세요.
+  - 현재는 단일 페이지(index.html) 사이트라 1개 URL만 등록되어 있습니다.
+  - 페이지(about, products 등)가 별도 HTML 파일로 추가되면 <url> 블록을 복사해 추가하세요.
+  - lastmod 는 페이지 내용이 바뀔 때마다 갱신하면 검색엔진 재수집에 유리합니다.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 예시: 추후 별도 페이지가 생기면 아래처럼 추가
+  <url>
+    <loc>https://example.com/products.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  -->
+</urlset>
