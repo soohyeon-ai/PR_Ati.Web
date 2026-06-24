@@ -15,7 +15,7 @@ const I18n = (function () {
     'nav.ati':        { en: 'ATI', ko: 'ATI' },
     'nav.products':   { en: 'Product & Applications', ko: '제품 및 응용분야' },
     'nav.solutions':  { en: 'Solution & Services', ko: '솔루션 및 서비스' },
-    'nav.news':       { en: 'News & Events', ko: '뉴스 및 이벤트' },
+    'nav.support':    { en: 'Customer Support', ko: '고객지원' },
     'nav.contact':    { en: 'Contact us', ko: '문의하기' },
 
     // ===== Mega menu (전용 항목) =====
@@ -23,6 +23,8 @@ const I18n = (function () {
     'mega.customSol': { en: 'Custom Solutions', ko: '맞춤형 솔루션' },
     'mega.services':  { en: 'Services', ko: '서비스' },
     'mega.news':      { en: 'News', ko: '뉴스' },
+    'mega.contactUs': { en: 'Contact Us', ko: '문의하기' },
+    'mega.faq':       { en: 'FAQ', ko: '자주 묻는 질문' },
 
     // ===== Hero =====
     'hero.subtitle':  { en: 'inspection solutions for the semiconductor and PCB industries', ko: '데이터와 정밀 검사를 잇는 ATI의 기술로 \n 반도체·PCB 산업의 미래 품질을 완성합니다.' },
@@ -77,7 +79,7 @@ const I18n = (function () {
     'footer.col.company': { en: 'Company', ko: '회사' },
     'footer.col.legal':   { en: 'Legal', ko: '법적 고지' },
     'footer.col.solutions': { en: 'Solution & Services', ko: '솔루션 및 서비스' },
-    'footer.col.news':      { en: 'News & Events', ko: '뉴스 및 이벤트' },
+    'footer.col.support':   { en: 'Customer Support', ko: '고객지원' },
 
     'footer.aboutAti': { en: 'About ATI', ko: '회사 소개' },
     'footer.history':  { en: 'History', ko: '연혁' },
@@ -239,7 +241,64 @@ const I18n = (function () {
     'about.esg.social.desc': { en: 'We invest in our people and communities through fair labor practices, diversity and inclusion, and talent development. ATI has been recognized as a youth-friendly company and a good employer. We maintain safe working conditions and support local communities where we operate.', ko: '우리는 공정한 노동 관행, 다양성과 포용, 인재 육성을 통해 임직원과 지역사회에 투자합니다. ATI는 청년친화기업이자 우수 고용기업으로 인정받았으며, 안전한 근로 환경을 유지하고 사업장이 위치한 지역사회를 지원합니다.' },
     'about.esg.gov.title': { en: 'Governance', ko: '지배구조' },
     'about.esg.gov.desc': { en: 'Strong governance ensures transparency, accountability, and ethical conduct. Our board and management are committed to sound corporate governance, risk management, and stakeholder engagement. We adhere to applicable laws and regulations in all markets where we do business.', ko: '건전한 지배구조는 투명성, 책임성, 윤리적 행동을 보장합니다. 이사회와 경영진은 건전한 기업 지배구조, 리스크 관리, 이해관계자 소통에 헌신합니다. 우리는 사업을 영위하는 모든 시장에서 관련 법규를 준수합니다.' },
-    'about.esg.gov.link': { en: '← History', ko: '← 연혁' }
+    'about.esg.gov.link': { en: '← History', ko: '← 연혁' },
+
+    // ===== Semiconductor Applications 페이지 =====
+    'semi.hero.eyebrow': { en: 'PRODUCT & APPLICATIONS', ko: '제품 및 응용분야' },
+    'semi.hero.desc': {
+      en: 'From front-end to advanced packaging, ATI provides wafer inspection and metrology solutions that span the entire semiconductor manufacturing process. With unpatterned and patterned wafer inspection, edge/backside inspection, and high-precision metrology for next-generation devices such as HBM and advanced nodes, we help secure more stable process quality.',
+      ko: 'ATI는 전공정부터 첨단 패키징까지, 반도체 제조 공정 전반을 아우르는 웨이퍼 검사·측정 솔루션을 제공합니다. Unpatterned 및 Patterned 웨이퍼 검사, Edge/Backside 검사, 그리고 HBM·Advanced Node 등 차세대 디바이스 대응을 위한 고정밀 계측 기술로 더욱 안정적인 공정 품질을 지원합니다.'
+    },
+    'semi.cat.wafer.sub': {
+      en: 'Unpatterned · Patterned · Edge / Backside defect inspection and high-precision metrology',
+      ko: 'Unpatterned · Patterned · Edge / Backside \n결함 검사와 고정밀 계측'
+    },
+    'semi.cat.mask.sub': {
+      en: 'Reticle / Photomask defect inspection and CD · overlay measurement solutions',
+      ko: 'Reticle / Photomask 결함 검사 및\n CD·오버레이 측정 솔루션'
+    },
+    'semi.process.title': {
+      en: 'One continuous flow of\n<span>an 11-step precision process</span>',
+      ko: '하나로 이어지는 흐름,\n<span>11단계 정밀 공정</span>'
+    },
+    'semi.process.lead': {
+      en: 'Click each step to view its detailed process and equipment. All processes are managed in a single integrated line.',
+      ko: '각 단계를 클릭하면 세부 공정과 사용 장비를 확인할 수 있습니다. \n모든 공정은 단일 통합 라인에서 일괄 관리됩니다.'
+    },
+    'semi.phases.eyebrow': { en: 'FOUR PHASES, ONE LINE', ko: '4단계로 연결되는 정밀 프로세스' },
+
+    // Semiconductor page — hero buttons & stat labels
+    'semi.hero.moreBtn': { en: 'More View', ko: '더 보기' },
+    'semi.hero.techBtn': { en: 'Technology', ko: 'Technology' },
+    'semi.stat.steps':   { en: 'Process Steps', ko: '공정 단계' },
+    'semi.stat.heritage':{ en: 'Years Heritage', ko: '년의 역사' },
+    'semi.stat.stack':   { en: 'Stack Ready', ko: 'Stack Ready' },
+
+    // Semiconductor page — detail panel labels
+    'semi.label.phase':      { en: 'PHASE', ko: '단계' },
+    'semi.label.sequence':   { en: 'SEQUENCE', ko: '순서' },
+    'semi.label.prev':       { en: '← Prev', ko: '← 이전' },
+    'semi.label.next':       { en: 'Next Step', ko: '다음 단계' },
+    'semi.label.equipInUse': { en: 'EQUIPMENT IN USE', ko: '사용 설비' },
+    'semi.label.processFlow':{ en: 'PROCESS FLOW', ko: '공정 흐름' },
+
+    // ===== Package & PCB Applications 페이지 =====
+    'pcb.hero.desc': {
+      en: 'ATI provides inspection and measurement solutions optimized for advanced package and PCB manufacturing. From die-attach and wire-bonding inspection to 2D/3D appearance and dimension measurement, laser marking and JEDEC tray sorting, we support final vision inspection, automatic sorting and laser marking across a wide range of package products — realizing stable quality control and higher productivity with the ASIS series.',
+      ko: 'ATI는 첨단 패키지 및 PCB 제조 공정에 최적화된 검사·측정 솔루션을 제공합니다. Die Attach·Wire Bonding 검사부터 2D/3D 외관·치수 측정, 레이저 마킹, JEDEC 트레이 분류까지 — 다양한 패키지 제품의 최종 비전 검사, 자동 분류, 레이저 마킹을 지원하며, ASIS 시리즈를 통해 안정적인 품질 관리와 생산성 향상을 실현합니다.'
+    },
+    'pcb.cat.pkg.sub': {
+      en: 'Die attach · wire bonding and 2D/3D appearance · dimension inspection for advanced packages',
+      ko: '다이 어태치·와이어 본딩 및 어드밴스드 패키지 \n2D/3D 외관·치수 검사'
+    },
+    'pcb.cat.pcb.sub': {
+      en: 'PCB final vision inspection, laser marking, sorting and JEDEC tray handling',
+      ko: 'PCB 최종 비전 검사, 레이저 마킹, \n소팅 및 JEDEC 트레이 핸들링'
+    },
+    'pcb.process.title': {
+      en: 'One continuous flow of\n<span>a 6-step precision process</span>',
+      ko: '하나로 이어지는 흐름,\n<span>6단계 정밀 공정</span>'
+    }
   };
 
   let currentLang = DEFAULT_LANG;
@@ -301,6 +360,9 @@ const I18n = (function () {
     try {
       localStorage.setItem(STORAGE_KEY, lang);
     } catch (e) { /* 무시 */ }
+
+    // JS로 렌더링된 콘텐츠(예: semiconductor.js)가 언어 변경에 반응할 수 있도록 이벤트 발행
+    document.dispatchEvent(new CustomEvent('langchange', { detail: { lang: currentLang } }));
   }
 
   return { init, apply };
