@@ -84,44 +84,39 @@
       </a>
       <nav class="header__nav" id="main-nav">
         <ul class="nav__list">
-          <li class="nav__item" data-menu="ati"><a href="#about" class="nav__link" data-i18n="nav.ati">ATI</a></li>
+          <li class="nav__item" data-menu="ati"><a href="about.html" class="nav__link" data-i18n="nav.ati">ATI</a></li>
           <li class="nav__item" data-menu="products"><a href="#products" class="nav__link" data-i18n="nav.products">Product &amp; Applications</a></li>
           <li class="nav__item" data-menu="solutions"><a href="#solutions" class="nav__link" data-i18n="nav.solutions">Solution &amp; Services</a></li>
-          <li class="nav__item" data-menu="news"><a href="#news" class="nav__link" data-i18n="nav.news">News &amp; Events</a></li>
+          <li class="nav__item" data-menu="news"><a href="#news" class="nav__link" data-i18n="nav.news">News</a></li>
         </ul>
         <div class="mega-menu" id="mega-menu">
           <div class="mega-menu__inner">
             <div class="mega-menu__column" data-col="ati">
               <ul>
-                <li><a href="#" data-i18n="footer.aboutAti">About ATI</a></li>
-                <li><a href="#" data-i18n="footer.mission">Mission and Vision</a></li>
-                <li><a href="#" data-i18n="footer.history">History</a></li>
-                <li><a href="#" data-i18n="footer.esg">ESG</a></li>
+                <li><a href="about.html" data-i18n="footer.aboutAti">About ATI</a></li>
+                <li><a href="about.html#history" data-i18n="footer.history">History</a></li>
+                <li><a href="about.html#esg" data-i18n="footer.esg">ESG</a></li>
               </ul>
             </div>
             <div class="mega-menu__column" data-col="products">
               <ul>
                 <li><a href="#" data-i18n="footer.semiApp">Semiconductor Applications</a></li>
+                <li><a href="#" data-i18n="footer.pcbApp">PCB Applications</a></li>
                 <li><a href="#" data-i18n="footer.wafer">Wafer</a></li>
                 <li><a href="#" data-i18n="footer.reticle">Reticle</a></li>
                 <li><a href="#" data-i18n="footer.package">Package</a></li>
-                <li><a href="#" data-i18n="footer.pcbApp">PCB Applications</a></li>
               </ul>
             </div>
             <div class="mega-menu__column" data-col="solutions">
               <ul>
-                <li><a href="#" data-i18n="footer.aboutAti">About ATI</a></li>
-                <li><a href="#" data-i18n="footer.mission">Mission and Vision</a></li>
-                <li><a href="#" data-i18n="footer.history">History</a></li>
-                <li><a href="#" data-i18n="footer.esg">ESG</a></li>
+                <li><a href="#" data-i18n="mega.aiTech">AI Technology</a></li>
+                <li><a href="#" data-i18n="mega.customSol">Custom Solutions</a></li>
+                <li><a href="#" data-i18n="mega.services">Services</a></li>
               </ul>
             </div>
             <div class="mega-menu__column" data-col="news">
               <ul>
-                <li><a href="#" data-i18n="footer.aboutAti">About ATI</a></li>
-                <li><a href="#" data-i18n="footer.mission">Mission and Vision</a></li>
-                <li><a href="#" data-i18n="footer.history">History</a></li>
-                <li><a href="#" data-i18n="footer.esg">ESG</a></li>
+                <li><a href="#" data-i18n="mega.news">News</a></li>
               </ul>
             </div>
           </div>
@@ -309,6 +304,45 @@
 
   </div><!-- /.continuous-bg -->
 
+  <!-- Customer Logos Marquee: 우→좌로 흐르는 고객사 로고 띠 -->
+  <section class="clients" id="clients" aria-label="ATI 주요 고객사">
+    <div class="clients__viewport">
+      <!-- 끊김 없는 무한 루프를 위해 동일한 그룹을 두 번 렌더링 (aria-hidden 복제본) -->
+      <ul class="clients__track">
+        <li class="clients__item"><img src="assets/images/Samsung-Logo.png" alt="Samsung" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/SK-hynix_RGB_EN 1.png" alt="SK hynix" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/micron-Logo.png" alt="Micron" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/Denso-Logo.png" alt="DENSO" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/simmtech-Logo.png" alt="SIMMTECH" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/DNP-Logo.png" alt="DNP" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/Daeduck-Logo.png" alt="Daeduck" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/absolics-Logo.png" alt="Absolics" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/koreacircuit-Logo.png" alt="Korea Circuit" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/meiko-Logo.png" alt="Meiko" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/photronics-Logo.png" alt="Photronics" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/sanken-Logo.png" alt="Sanken" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/toppan-Logo.png" alt="Toppan" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/wonik-Logo.png" alt="Wonik" loading="lazy" decoding="async"></li>
+      </ul>
+      <ul class="clients__track" aria-hidden="true">
+        <li class="clients__item"><img src="assets/images/Samsung-Logo.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/SK-hynix_RGB_EN 1.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/micron-Logo.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/Denso-Logo.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/simmtech-Logo.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/DNP-Logo.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/Daeduck-Logo.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/absolics-Logo.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/koreacircuit-Logo.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/meiko-Logo.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/photronics-Logo.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/sanken-Logo.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/toppan-Logo.png" alt="" loading="lazy" decoding="async"></li>
+        <li class="clients__item"><img src="assets/images/wonik-Logo.png" alt="" loading="lazy" decoding="async"></li>
+      </ul>
+    </div>
+  </section>
+
   <!-- News & Events Section -->
   <section class="news" id="news">
     <div class="news__header" data-animate="fade-up">
@@ -414,10 +448,10 @@
           <div class="footer__column">
             <h4 class="footer__column-title" data-i18n="footer.col.ati">ATI</h4>
             <ul>
-              <li><a href="#" data-i18n="footer.aboutAti">About ATI</a></li>
-              <li><a href="#" data-i18n="footer.mission">Mission and Vision</a></li>
-              <li><a href="#" data-i18n="footer.history">History</a></li>
-              <li><a href="#" data-i18n="footer.esg">ESG</a></li>
+              <li><a href="about.html" data-i18n="footer.aboutAti">About ATI</a></li>
+              <li><a href="about.html#mission" data-i18n="footer.mission">Mission and Vision</a></li>
+              <li><a href="about.html#history" data-i18n="footer.history">History</a></li>
+              <li><a href="about.html#esg" data-i18n="footer.esg">ESG</a></li>
             </ul>
           </div>
           <div class="footer__column">
@@ -431,21 +465,18 @@
             </ul>
           </div>
           <div class="footer__column">
-            <h4 class="footer__column-title" data-i18n="footer.col.company">Company</h4>
+            <h4 class="footer__column-title" data-i18n="footer.col.solutions">Solution &amp; Services</h4>
             <ul>
-              <li><a href="#" data-i18n="footer.aboutAti">About ATI</a></li>
-              <li><a href="#" data-i18n="footer.mission">Mission and Vision</a></li>
-              <li><a href="#" data-i18n="footer.history">History</a></li>
-              <li><a href="#" data-i18n="footer.esg">ESG</a></li>
+              <li><a href="#solutions" data-i18n="mega.aiTech">AI Technology</a></li>
+              <li><a href="#solutions" data-i18n="mega.customSol">Custom Solutions</a></li>
+              <li><a href="#solutions" data-i18n="mega.services">Services</a></li>
             </ul>
           </div>
           <div class="footer__column">
-            <h4 class="footer__column-title" data-i18n="footer.col.legal">Legal</h4>
+            <h4 class="footer__column-title" data-i18n="footer.col.news">News &amp; Events</h4>
             <ul>
-              <li><a href="#" data-i18n="footer.aboutAti">About ATI</a></li>
-              <li><a href="#" data-i18n="footer.mission">Mission and Vision</a></li>
-              <li><a href="#" data-i18n="footer.history">History</a></li>
-              <li><a href="#" data-i18n="footer.esg">ESG</a></li>
+              <li><a href="#news" data-i18n="mega.news">News</a></li>
+              <li><a href="#contact" data-i18n="footer.contactUs">Contact Us</a></li>
             </ul>
           </div>
           <div class="footer__side">

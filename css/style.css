@@ -302,18 +302,20 @@ button {
 .mega-menu__column ul {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2px;
 }
 
 .mega-menu__column ul li a {
   display: block;
   padding: 5px 0;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   color: rgba(34, 34, 34, 0.7);
   letter-spacing: -0.285px;
   transition: color 0.25s ease;
   white-space: nowrap;
+  text-align: center;
 }
 
 .mega-menu__column ul li a:hover {
@@ -1282,7 +1284,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px 0;
+  padding: 30px 0;
   overflow: hidden;
 }
 
@@ -2115,5 +2117,73 @@ button {
   .hero__visual {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* ===== CUSTOMER LOGOS MARQUEE ===== */
+/* 우→좌로 흐르는 고객사 로고 띠. 속도는 --clients-speed 로 조절 (작을수록 빠름) */
+.clients {
+  --clients-speed: 32s;
+  background-color: #fff;
+  padding: 50px 0;
+  margin: 50px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.clients__viewport {
+  display: flex;
+  width: max-content;
+  /* 좌우 가장자리 페이드 처리 */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.clients__track {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  animation: clients-scroll var(--clients-speed) linear infinite;
+}
+
+.clients__item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 36px;
+}
+
+.clients__item img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.55;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.clients__item img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* 마우스 올리면 잠시 멈춰 로고를 확인할 수 있게 */
+.clients__viewport:hover .clients__track {
+  animation-play-state: paused;
+}
+
+@keyframes clients-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients__track {
+    animation: none;
   }
 }
