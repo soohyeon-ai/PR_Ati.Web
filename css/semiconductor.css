@@ -1,0 +1,786 @@
+/* =========================================================
+   Semiconductor Applications Page
+   - Figma: Web_Ati_ Products & Applications (node 279:836)
+   - 트렌디한 인터랙티브 11단계 공정 스테퍼 + 스크롤 리빌
+   ========================================================= */
+
+.semi-page {
+  background: #fff;
+}
+
+.semi {
+  display: block;
+  padding-top: var(--header-height);
+}
+
+.semi section {
+  width: 100%;
+}
+
+/* 공통 inner */
+.semi-hero__inner,
+.semi-cats__inner,
+.semi-process__inner,
+.semi-phases__inner {
+  width: min(92%, 1280px);
+  margin: 0 auto;
+}
+
+/* ===== 스크롤 리빌 (페이지 전용 토큰) ===== */
+.semi [data-animate] {
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--delay, 0ms);
+  will-change: opacity, transform;
+}
+.semi [data-animate="zoom-in"] {
+  transform: scale(0.92);
+}
+.semi [data-animate].is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .semi [data-animate] { opacity: 1; transform: none; transition: none; }
+}
+
+/* ===== 공통 버튼 ===== */
+.semi-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 51px;
+  padding: 0 28px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: transform var(--transition), background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+.semi-btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.semi-btn--primary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-3px);
+}
+.semi-btn--primary svg { transition: transform 0.3s ease; }
+.semi-btn--primary:hover svg { transform: translateX(4px); }
+
+/* 메인 화면 아웃라인 버튼과 동일: 왼쪽에서 빨갛게 차오르는 채움 애니메이션 */
+.semi-btn--ghost {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  color: #262626;
+  border: 1px solid #d4d4d4;
+}
+.semi-btn--ghost::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: var(--color-primary);
+  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
+}
+.semi-btn--ghost > span {
+  position: relative;
+  z-index: 1;
+}
+.semi-btn--ghost:hover {
+  color: #fff;
+  border-color: var(--color-primary);
+}
+.semi-btn--ghost:hover::before {
+  width: 100%;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.semi-hero {
+  padding: 72px 0 40px;
+}
+.semi-hero__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+  min-height: 560px;
+}
+.semi-hero__eyebrow {
+  font-size: 20px;
+  letter-spacing: 0px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 18px;
+}
+.semi-hero__title {
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1.06;
+  font-weight: 700;
+  letter-spacing: -1.8px;
+  color: #171717;
+  display: flex;
+  flex-direction: column;
+}
+.semi-hero__title-accent { color: #d50001; }
+.semi-hero__desc {
+  margin-top: 22px;
+  max-width: 470px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #525252;
+}
+.semi-hero__actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 34px;
+}
+.semi-hero__stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--color-border-light);
+}
+.semi-stat { display: flex; flex-direction: column; gap: 4px; }
+.semi-stat__num {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+  color: #171717;
+}
+.semi-stat__label {
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  color: #737373;
+  text-transform: uppercase;
+}
+
+/* 칩 비주얼 */
+.semi-hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.semi-hero__visual { position: relative; }
+.semi-hero__imgcard {
+  position: relative;
+  width: min(100%, 460px);
+  aspect-ratio: 425 / 600;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -30px rgba(20, 30, 60, 0.45);
+  animation: semiCardFloat 7s ease-in-out infinite;
+}
+.semi-hero__imgcard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.semi-hero__imgcard:hover img { transform: scale(1.08); }
+@keyframes semiCardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+/* Figma 빨간 코너 액센트 (우상단) */
+.semi-hero__corner {
+  position: absolute;
+  top: -14px;
+  right: 18px;
+  width: 56px;
+  height: 56px;
+  border: 3px solid var(--color-primary);
+  border-radius: 4px;
+  z-index: 2;
+}
+/* .semi-equip__glow 등에서 공통으로 사용 */
+@keyframes semiGlow {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.18); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .semi-hero__imgcard { animation: none; }
+}
+
+/* =========================================================
+   CATEGORY CARDS
+   ========================================================= */
+.semi-cats { padding: 60px 0; }
+.semi-cats__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+/* 단일(풀폭) 카드 — PCB 페이지처럼 카드가 하나일 때 */
+.semi-cats__inner--single { grid-template-columns: 1fr; }
+.semi-cat--wide { height: 381px; }
+.semi-cat {
+  position: relative;
+  height: 360px;
+  border-radius: 26px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  isolation: isolate;
+}
+.semi-cat__bg {
+  position: absolute;
+  inset: 0;
+  background: #0c0c0c;
+  overflow: hidden;
+}
+/* Figma: 검은 배경 위 이미지를 낮은 불투명도로 오버레이 */
+.semi-cat__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.28;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
+}
+.semi-cat:hover .semi-cat__img {
+  transform: scale(1.08);
+  opacity: 0.4;
+}
+.semi-cat__body { position: relative; z-index: 1; padding: 0 24px; }
+.semi-cat__title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+  letter-spacing: -0.6px;
+}
+.semi-cat__sub {
+  margin: 16px auto 22px;
+  max-width: 320px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
+.semi-cat__btn {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.semi-cat__btn:hover {
+  background: #fff;
+  color: #171717;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PROCESS FLOW (interactive)
+   ========================================================= */
+.semi-process {
+  padding: 80px 0 20px;
+  background: #fbfbfb;
+}
+.semi-process__head {
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+.semi-process__title {
+  font-size: clamp(30px, 3.6vw, 45px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+  color: #171717;
+}
+.semi-process__title span { color: #d50001; }
+.semi-process__lead {
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: #525252;
+}
+
+/* phase 탭 */
+.semi-phasebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: 40px;
+}
+.semi-phasebar__tab {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 22px;
+  font-size: 13.6px;
+  color: #737373;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+.semi-phasebar__tab b { font-size: 11px; opacity: 0.5; font-weight: 600; }
+.semi-phasebar__tab i { font-size: 11px; font-style: normal; opacity: 0.5; }
+.semi-phasebar__tab:hover { color: #171717; background: rgba(0,0,0,0.02); }
+.semi-phasebar__tab.is-active {
+  color: #d50001;
+  border-color: #d50001;
+}
+.semi-phasebar__tab.is-active b,
+.semi-phasebar__tab.is-active i { opacity: 0.7; }
+
+/* 11-step rail */
+.semi-rail {
+  position: relative;
+  margin-bottom: 48px;
+  padding: 6px 0 30px;
+}
+.semi-rail__track {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e2e2e2;
+  border-radius: 2px;
+}
+.semi-rail__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #ff5a5a, #d50001);
+  border-radius: 2px;
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.semi-rail__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 6px;
+}
+.semi-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 6px;
+}
+.semi-step__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid #d4d4d4;
+  color: #a1a1a1;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.3s ease, border-color 0.3s ease,
+              color 0.3s ease, box-shadow 0.3s ease;
+}
+.semi-step__icon svg { width: 22px; height: 22px; }
+.semi-step__no {
+  font-size: 10.4px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #a1a1a1;
+  transition: color 0.3s ease;
+}
+.semi-step:hover .semi-step__icon {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.semi-step.is-done .semi-step__icon {
+  background: #ffc3c8;
+  border-color: #d50001;
+  color: #d50001;
+}
+.semi-step.is-active .semi-step__icon {
+  background: #d50001;
+  border-color: #d50001;
+  color: #fff;
+  transform: scale(1.12);
+
+}
+.semi-step.is-active .semi-step__no { color: #d50001; }
+
+/* Detail panel */
+.semi-detail {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1px;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #dadada;
+}
+.semi-detail__info {
+  background: #fff;
+  padding: 52px;
+  display: flex;
+  flex-direction: column;
+}
+.semi-detail__info.is-swap .semi-detail__name,
+.semi-detail__info.is-swap .semi-detail__ko,
+.semi-detail__info.is-swap .semi-detail__desc {
+  animation: semiSwap 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes semiSwap {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.semi-detail__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+.semi-detail__step {
+  background: #d50001;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.semi-detail__phase {
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  color: #737373;
+}
+.semi-detail__name {
+  font-size: 31px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  color: #171717;
+}
+.semi-detail__ko {
+  margin-top: 4px;
+  font-size: 15px;
+  color: #d50001;
+  font-weight: 500;
+}
+.semi-detail__desc {
+  margin-top: 18px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #525252;
+}
+.semi-detail__facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 30px;
+  border: 1px solid var(--color-border-light);
+  background: var(--color-border-light);
+  gap: 1px;
+}
+.semi-fact {
+  background: #fff;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.semi-fact__k {
+  font-size: 10.4px;
+  letter-spacing: 1px;
+  color: #737373;
+}
+.semi-fact__v { font-size: 16px; font-weight: 500; color: #171717; }
+.semi-fact__v em { color: #c8102e; font-style: normal; }
+
+.semi-detail__nav {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 32px;
+}
+.semi-navbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 20px;
+  border-radius: 6px;
+  font-size: 13.6px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.25s ease, opacity 0.3s ease, color 0.3s ease;
+}
+.semi-navbtn--prev {
+  border: 1px solid #d4d4d4;
+  color: #171717;
+  background: #fff;
+}
+.semi-navbtn--prev:hover { border-color: #171717; transform: translateX(-3px); }
+.semi-navbtn--next {
+  background: #d50001;
+  color: #fff;
+}
+.semi-navbtn--next:hover { background: var(--color-primary-hover); transform: translateX(3px); }
+.semi-navbtn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+/* Equipment dark card */
+.semi-equip {
+  position: relative;
+  background: #171717;
+  padding: 52px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 520px;
+}
+.semi-equip__glow {
+  position: absolute;
+  top: -110px;
+  right: -40px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(209, 26, 42, 0.35);
+  filter: blur(64px);
+  animation: semiGlow 6s ease-in-out infinite;
+}
+.semi-equip__label {
+  position: relative;
+  font-size: 11.2px;
+  letter-spacing: 1.1px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 14px;
+}
+.semi-equip__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.semi-equip__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.semi-equip__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ee06a;
+  box-shadow: 0 0 0 0 rgba(46, 224, 106, 0.6);
+  animation: semiPing 1.8s ease-out infinite;
+}
+@keyframes semiPing {
+  0% { box-shadow: 0 0 0 0 rgba(46, 224, 106, 0.55); }
+  100% { box-shadow: 0 0 0 9px rgba(46, 224, 106, 0); }
+}
+.semi-equip__name {
+  font-size: 15.2px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  color: #fff;
+}
+.semi-equip__state {
+  margin-left: auto;
+  font-size: 10.4px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.semi-equip__flow {
+  position: relative;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.semi-equip__chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.semi-flowchip {
+  font-size: 12.6px;
+  white-space: nowrap;
+}
+.semi-flowchip--ghost { color: rgba(255, 255, 255, 0.45); }
+.semi-flowchip--on {
+  background: #d50001;
+  color: #fff;
+  padding: 4px 9px;
+  border-radius: 6px;
+}
+.semi-flowchip__arr { color: rgba(255, 255, 255, 0.3); }
+/* 설비 이미지를 카드 하단에 깔고, 아래쪽 일부만 잘라 카드 안에 녹여 넣는다.
+   - margin-top:auto 로 카드 하단에 밀착(상단 콘텐츠와 겹치지 않음)
+   - 음수 margin 으로 카드 좌우/하단 가장자리까지 확장
+   - 고정 height + overflow:hidden 으로 이미지 아래쪽을 잘라 보여줌 */
+.semi-equip__photo {
+  position: relative;
+  margin: 32px -52px -52px;
+  margin-top: auto;
+  height: 232px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none;
+}
+.semi-equip__photo img {
+  display: block;
+  width: 88%;
+  max-width: 360px;
+  height: auto;
+  /* 검은 배경(equipment-hero)을 카드 색에 녹임. 투명 배경(C1)은 영향 없음 */
+  mix-blend-mode: screen;
+  animation: semiEquipFloat 6s ease-in-out infinite;
+}
+/* 단계 전환 시 이미지가 부드럽게 떠오르도록 */
+.semi-equip__photo.is-swap img {
+  animation: semiEquipIn 0.6s cubic-bezier(0.22, 1, 0.36, 1), semiEquipFloat 6s ease-in-out 0.6s infinite;
+}
+@keyframes semiEquipIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes semiEquipFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .semi-equip__photo img { animation: none; }
+}
+
+/* =========================================================
+   FOUR PHASES SUMMARY
+   ========================================================= */
+.semi-phases {
+  padding: 70px 0 100px;
+  background: #fbfbfb;
+}
+.semi-phases__eyebrow {
+  font-size: 24px;
+  font-weight: 700;
+  color: #171717;
+  margin-bottom: 24px;
+}
+.semi-phases__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--color-border-light);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.semi-pcard {
+  background: #fff;
+  padding: 32px;
+  border-left: 1px solid var(--color-border-light);
+  transform: translateY(16px);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--d, 0ms);
+}
+.semi-phases__grid.is-visible .semi-pcard { opacity: 1; transform: none; }
+.semi-pcard:first-child { border-left: 0; }
+.semi-pcard.is-lead { background: #d50001; }
+.semi-pcard__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.semi-pcard__idx {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  color: #d4d4d4;
+}
+.semi-pcard.is-lead .semi-pcard__idx { color: #fff; }
+.semi-pcard__count {
+  font-size: 10.4px;
+  color: #a1a1a1;
+  letter-spacing: 0.4px;
+}
+.semi-pcard.is-lead .semi-pcard__count { color: rgba(255,255,255,0.8); }
+.semi-pcard__title {
+  font-size: 17.6px;
+  font-weight: 700;
+  color: #171717;
+  margin-bottom: 16px;
+}
+.semi-pcard.is-lead .semi-pcard__title { color: #fff; }
+.semi-pcard__list { display: flex; flex-direction: column; gap: 4px; }
+.semi-pcard__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+.semi-pcard__row:hover { transform: translateX(4px); }
+.semi-pcard__no {
+  font-size: 12.5px;
+  color: #737373;
+  opacity: 0.7;
+  min-width: 18px;
+}
+.semi-pcard.is-lead .semi-pcard__no { color: #fff; }
+.semi-pcard__name { font-size: 12.5px; color: #737373; }
+.semi-pcard.is-lead .semi-pcard__name { color: rgba(255,255,255,0.85); }
+.semi-pcard__row:hover .semi-pcard__name { color: #171717; }
+.semi-pcard.is-lead .semi-pcard__row:hover .semi-pcard__name { color: #fff; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 992px) {
+  .semi-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+  .semi-hero__visual { order: -1; }
+  .semi-chip { width: min(100%, 360px); }
+  .semi-detail { grid-template-columns: 1fr; }
+  .semi-phases__grid { grid-template-columns: 1fr 1fr; }
+  .semi-pcard:nth-child(odd) { border-left: 0; }
+  .semi-rail__steps { gap: 4px; }
+  .semi-step__icon { width: 46px; height: 46px; }
+  .semi-step__icon svg { width: 18px; height: 18px; }
+}
+
+@media (max-width: 760px) {
+  .semi-cats__inner { grid-template-columns: 1fr; }
+  .semi-hero__stats { gap: 24px; }
+  .semi-stat__num { font-size: 30px; }
+  .semi-detail__info, .semi-equip { padding: 32px; }
+
+  /* 모바일: 11-step rail 가로 스크롤 */
+  .semi-rail { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 16px; }
+  .semi-rail__track { display: none; }
+  .semi-rail__steps {
+    display: flex;
+    min-width: 620px;
+  }
+  .semi-step { flex: 0 0 56px; }
+  .semi-phasebar { flex-wrap: nowrap; overflow-x: auto; }
+  .semi-phasebar__tab { white-space: nowrap; }
+}
+
+@media (max-width: 560px) {
+  .semi-phases__grid { grid-template-columns: 1fr; }
+  .semi-pcard { border-left: 0; border-top: 1px solid var(--color-border-light); }
+  .semi-pcard:first-child { border-top: 0; }
+  .semi-hero__actions { flex-wrap: wrap; }
+}
