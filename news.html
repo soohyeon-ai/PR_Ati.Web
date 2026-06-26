@@ -1,19 +1,19 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./assets/images/ATI_favicon.ico">
 
-  <title>Mask (Reticle) Inspection &amp; Measurement | Advanced Technology Inc.</title>
-  <meta name="description" content="ATI 레티클(마스크) 검사·계측 제품 — SUN2, VEGA-D, VEGA-P, ROE-1000, TRITON 등 DUV·EUV 마스크 결함 검사 및 광학밀도 측정 시스템.">
+  <title>News &amp; Events | Advanced Technology Inc.</title>
+  <meta name="description" content="ATI 뉴스 &amp; 이벤트 — 공지사항, 보도자료, 채용 등 Advanced Technology Inc.의 최신 소식을 확인하세요.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://example.com/products-reticle.html">
+  <link rel="canonical" href="https://example.com/news.html">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ATI - Advanced Technology Inc.">
-  <meta property="og:title" content="Mask (Reticle) Inspection & Measurement - Advanced Technology Inc.">
-  <meta property="og:description" content="DUV·EUV 마스크 결함 검사 및 광학밀도 측정 시스템 라인업.">
+  <meta property="og:title" content="News &amp; Events - Advanced Technology Inc.">
+  <meta property="og:description" content="ATI의 공지사항·보도자료 등 최신 소식.">
   <meta property="og:locale" content="ko_KR">
   <meta name="theme-color" content="#E51415">
 
@@ -21,16 +21,15 @@
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/controls.css">
-  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/news.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
-<body class="prod-page">
-  <!-- Header / Navigation -->
+<body class="news-page">
+  <!-- Header / Navigation (메인과 동일) -->
   <header class="header" id="header">
     <div class="header__inner">
       <a href="index.html" class="header__logo">
-        <img class="header__logo-img header__logo-img--dark" src="assets/images/ATI_Logo_white.png" alt="ATI - Advanced Technology Inc. 로고">
-        <img class="header__logo-img header__logo-img--light" src="assets/images/ATI_Logo_default.png" alt="" aria-hidden="true">
+        <img src="assets/images/ATI_Logo_default.png" alt="ATI - Advanced Technology Inc. 로고">
       </a>
       <nav class="header__nav" id="main-nav">
         <ul class="nav__list">
@@ -81,92 +80,112 @@
     </div>
   </header>
 
-  <main class="prod prod--hero-first">
-    <!-- Hero banner (풀스크린) -->
-    <section class="prod-section prod-section--hero">
-      <div class="prod-banner prod-banner--full" data-animate>
-        <img class="prod-banner__img" src="assets/images/wafer-hero-banner.jpg" alt="ATI 마스크(레티클) 검사 장비" decoding="async">
-        <div class="prod-banner__content">
-          <h1 class="prod-banner__title" data-i18n="prodList.reticle.title">Mask Inspection &amp; Measurement</h1>
-          <div class="prod-banner__tabs">
-            <a class="prod-banner__tab" href="products-wafer.html" data-i18n="prodTab.wafer">Wafer Inspection &amp; Measurement</a>
-            <span class="prod-banner__dot"></span>
-            <a class="prod-banner__tab is-active" href="products-reticle.html" data-i18n="prodTab.reticle">Mask Inspection &amp; Measurement</a>
-            <span class="prod-banner__dot"></span>
-            <a class="prod-banner__tab" href="products-package.html" data-i18n="prodTab.package">Package Inspection &amp; Measurement</a>
-          </div>
-          <a class="prod-banner__scroll" href="#reticle-list">
-            Scroll Down
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+  <main class="news">
+    <!-- ===================== HERO ===================== -->
+    <section class="news-hero">
+      <div class="news-hero__inner" data-animate="fade-up">
+        <p class="news-hero__eyebrow" data-i18n="news.hero.eyebrow">Customer Support</p>
+        <h1 class="news-hero__title" data-i18n="news.hero.title">News &amp; Events</h1>
+      </div>
+    </section>
+
+    <div class="news-container">
+      <!-- ===================== TOOLBAR ===================== -->
+      <div class="news-toolbar" data-animate="fade-up">
+        <p class="news-total">TOTAL.<strong> 57</strong></p>
+        <form class="news-search" role="search" onsubmit="return false;">
+          <select class="news-search__field" aria-label="검색 기준">
+            <option value="title">제목</option>
+            <option value="content">내용</option>
+            <option value="writer">작성자</option>
+          </select>
+          <input class="news-search__input" id="news-search-input" type="search" placeholder="검색어를 입력하세요" aria-label="검색어">
+          <button class="news-search__btn" type="submit" aria-label="검색">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- ===================== LIST ===================== -->
+      <ul class="news-list" id="news-list">
+        <li class="news-row">
+          <a href="news-article.html">
+            <span class="news-row__date">2026-04-06</span>
+            <span class="news-row__badge">공지</span>
+            <span class="news-row__title">제 30기 정기주주총회 개최</span>
+            <span class="news-row__arrow" aria-hidden="true">&rarr;</span>
           </a>
-        </div>
-      </div>
-    </section>
+        </li>
+        <li class="news-row">
+          <a href="news-article.html">
+            <span class="news-row__date">2026-03-18</span>
+            <span class="news-row__badge">공지</span>
+            <span class="news-row__title">ATI, SEMICON Korea 2026 참가 안내</span>
+            <span class="news-row__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li class="news-row">
+          <a href="news-article.html">
+            <span class="news-row__date">2026-02-27</span>
+            <span class="news-row__badge news-row__badge--press">보도</span>
+            <span class="news-row__title">AI 기반 결함 검사 시스템 신규 출시</span>
+            <span class="news-row__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li class="news-row">
+          <a href="news-article.html">
+            <span class="news-row__date">2026-01-15</span>
+            <span class="news-row__badge">공지</span>
+            <span class="news-row__title">2026년 신년사 및 경영방침 발표</span>
+            <span class="news-row__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li class="news-row">
+          <a href="news-article.html">
+            <span class="news-row__date">2025-12-10</span>
+            <span class="news-row__badge news-row__badge--hire">채용</span>
+            <span class="news-row__title">2025 하반기 신입·경력 채용 공고</span>
+            <span class="news-row__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li class="news-row">
+          <a href="news-article.html">
+            <span class="news-row__date">2025-11-22</span>
+            <span class="news-row__badge news-row__badge--press">보도</span>
+            <span class="news-row__title">ATI 인도 법인(ATI India) 설립</span>
+            <span class="news-row__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li class="news-row">
+          <a href="news-article.html">
+            <span class="news-row__date">2025-10-08</span>
+            <span class="news-row__badge">공지</span>
+            <span class="news-row__title">본사 이전 안내 (인천 송도)</span>
+            <span class="news-row__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li class="news-row">
+          <a href="news-article.html">
+            <span class="news-row__date">2025-09-30</span>
+            <span class="news-row__badge news-row__badge--press">보도</span>
+            <span class="news-row__title">글로벌 고객사 신규 장비 공급 계약 체결</span>
+            <span class="news-row__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      </ul>
 
-    <!-- Product grid -->
-    <section class="prod-list prod-section" id="reticle-list">
-      <div class="prod-inner">
-        <p class="prod-intro" data-animate data-i18n="rcard.intro">ATI reticle (mask) inspection and metrology systems support DUV and EUV masks for advanced semiconductor manufacturing, delivering defect detection and optical density measurement for critical mask qualification.</p>
-        <div class="prod-grid">
-
-          <article class="prod-card" data-animate>
-            <div class="prod-card__media"><img src="assets/images/product-c1-photo.png" alt="SUN2 레티클 검사 장비" loading="lazy" decoding="async"></div>
-            <div class="prod-card__body">
-              <h3 class="prod-card__name">SUN2</h3>
-              <p class="prod-card__desc" data-i18n="rcard.sun2.desc">Reticle inspection system for DUV mask qualification</p>
-              <a href="product-sun2.html" class="prod-card__btn" data-i18n="wcard.viewBtn">Product View
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="prod-card" data-animate style="--delay:80ms">
-            <div class="prod-card__media"><img src="assets/images/product-c1-photo.png" alt="VEGA-D EUV 레티클 검사 장비" loading="lazy" decoding="async"></div>
-            <div class="prod-card__body">
-              <h3 class="prod-card__name">VEGA-D</h3>
-              <p class="prod-card__desc" data-i18n="rcard.vegad.desc">EUV reticle inspection system for advanced mask qualification</p>
-              <a href="product-vega-d.html" class="prod-card__btn" data-i18n="wcard.viewBtn">Product View
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="prod-card" data-animate style="--delay:160ms">
-            <div class="prod-card__media"><img src="assets/images/product-c1-photo.png" alt="VEGA-P EUV 레티클 검사 장비" loading="lazy" decoding="async"></div>
-            <div class="prod-card__body">
-              <h3 class="prod-card__name">VEGA-P</h3>
-              <p class="prod-card__desc" data-i18n="rcard.vegap.desc">EUV reticle inspection system for advanced mask qualification</p>
-              <a href="product-vega-p.html" class="prod-card__btn" data-i18n="wcard.viewBtn">Product View
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="prod-card" data-animate>
-            <div class="prod-card__media"><img src="assets/images/product-c1-photo.png" alt="ROE-1000 레티클 검사·계측 장비" loading="lazy" decoding="async"></div>
-            <div class="prod-card__body">
-              <h3 class="prod-card__name">ROE-1000</h3>
-              <p class="prod-card__desc" data-i18n="rcard.roe1000.desc">Reticle inspection and measurement system</p>
-              <a href="product-roe1000.html" class="prod-card__btn" data-i18n="wcard.viewBtn">Product View
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="prod-card" data-animate style="--delay:80ms">
-            <div class="prod-card__media"><img src="assets/images/product-tidal.png" alt="TRITON 레티클 광학밀도 측정 시스템" loading="lazy" decoding="async"></div>
-            <div class="prod-card__body">
-              <h3 class="prod-card__name">TRITON</h3>
-              <p class="prod-card__desc" data-i18n="rcard.triton.desc">Reticle optical density measuring system for mask qualification</p>
-              <a href="product-triton.html" class="prod-card__btn" data-i18n="wcard.viewBtn">Product View
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
+      <!-- ===================== PAGINATION ===================== -->
+      <nav class="news-pagination" aria-label="페이지">
+        <a href="#" class="news-pagination__item is-active" aria-current="page">1</a>
+        <a href="#" class="news-pagination__item">2</a>
+        <a href="#" class="news-pagination__item">3</a>
+        <a href="#" class="news-pagination__item">4</a>
+        <a href="#" class="news-pagination__item">5</a>
+        <a href="#" class="news-pagination__item">6</a>
+        <a href="#" class="news-pagination__item">7</a>
+        <a href="#" class="news-pagination__item">8</a>
+      </nav>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -254,8 +273,26 @@
   <!-- Scripts -->
   <script src="js/controls/navigation.js"></script>
   <script src="js/controls/scroll-animations.js"></script>
-  <script src="js/controls/fullpage-scroll.js"></script>
   <script src="js/controls/i18n.js"></script>
-  <script src="js/controls/products.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof Navigation !== 'undefined') Navigation.init();
+      if (typeof ScrollAnimations !== 'undefined') ScrollAnimations.init();
+      if (typeof I18n !== 'undefined') I18n.init();
+
+      // 간단한 제목 검색 필터
+      var input = document.getElementById('news-search-input');
+      var rows = Array.prototype.slice.call(document.querySelectorAll('#news-list .news-row'));
+      if (input) {
+        input.addEventListener('input', function () {
+          var q = input.value.trim().toLowerCase();
+          rows.forEach(function (row) {
+            var title = row.querySelector('.news-row__title').textContent.toLowerCase();
+            row.style.display = (!q || title.indexOf(q) !== -1) ? '' : 'none';
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>

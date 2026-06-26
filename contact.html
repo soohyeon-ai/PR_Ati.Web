@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/images/ATI_favicon.ico">
+
+  <title>문의하기 | Advanced Technology Inc.</title>
+  <meta name="description" content="ATI 장비 및 솔루션 견적·상담 문의 — 이름, 이메일, 연락처, 문의 내용을 남겨주시면 담당자가 안내해 드립니다.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://example.com/contact.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ATI - Advanced Technology Inc.">
+  <meta property="og:title" content="문의하기 - Advanced Technology Inc.">
+  <meta property="og:description" content="ATI 장비 및 솔루션 견적·상담 문의.">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="theme-color" content="#E51415">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/controls.css">
+  <link rel="stylesheet" href="css/contact-page.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="contact-page">
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="assets/images/ATI_Logo_default.png" alt="ATI - Advanced Technology Inc. 로고">
+      </a>
+      <nav class="header__nav" id="main-nav">
+        <ul class="nav__list">
+          <li class="nav__item" data-menu="ati"><a href="about.html" class="nav__link" data-i18n="nav.ati">ATI</a></li>
+          <li class="nav__item" data-menu="products"><a href="products-semiconductor.html" class="nav__link" data-i18n="nav.products">Product &amp; Applications</a></li>
+          <li class="nav__item" data-menu="solutions"><a href="solutions-ai.html" class="nav__link" data-i18n="nav.solutions">Solution &amp; Services</a></li>
+          <li class="nav__item" data-menu="support"><a href="news.html" class="nav__link" data-i18n="nav.support">Customer Support</a></li>
+        </ul>
+        <div class="mega-menu" id="mega-menu">
+          <div class="mega-menu__inner">
+            <div class="mega-menu__column" data-col="ati">
+              <ul>
+                <li><a href="about.html" data-i18n="footer.aboutAti">About ATI</a></li>
+                <li><a href="about.html#history" data-i18n="footer.history">History</a></li>
+                <li><a href="about.html#esg" data-i18n="footer.esg">ESG</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__column" data-col="products">
+              <ul>
+                <li><a href="products-semiconductor.html" data-i18n="footer.semiApp">Semiconductor Applications</a></li>
+                <li><a href="products-pcb.html" data-i18n="footer.pcbApp">PCB Applications</a></li>
+                <li><a href="products-wafer.html" data-i18n="footer.wafer">Wafer</a></li>
+                <li><a href="products-reticle.html" data-i18n="footer.reticle">Reticle</a></li>
+                <li><a href="products-package.html" data-i18n="footer.package">Package</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__column" data-col="solutions">
+              <ul>
+                <li><a href="solutions-ai.html" data-i18n="mega.aiTech">AI Technology</a></li>
+                <li><a href="solutions-ai.html#howto" data-i18n="mega.customSol">Custom Solutions</a></li>
+                <li><a href="services.html" data-i18n="mega.services">Services</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__column" data-col="support">
+              <ul>
+                <li><a href="news.html" data-i18n="mega.news">News</a></li>
+                <li><a href="contact.html" data-i18n="mega.contactUs">Contact Us</a></li>
+                <li><a href="faq.html" data-i18n="mega.faq">FAQ</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <a href="contact.html" class="header__cta" data-i18n="nav.contact">문의하기</a>
+      <button class="header__mobile-toggle" id="mobile-toggle" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="inquiry">
+    <!-- ===================== HERO ===================== -->
+    <section class="inquiry-hero">
+      <div class="inquiry-hero__inner" data-animate="fade-up">
+        <p class="inquiry-hero__eyebrow" data-i18n="inquiry.hero.eyebrow">고객지원</p>
+        <h1 class="inquiry-hero__title" data-i18n="inquiry.hero.title">문의하기</h1>
+      </div>
+    </section>
+
+    <div class="inquiry-container">
+      <form class="inquiry-form" id="inquiry-form" novalidate>
+        <!-- ===================== 문의 항목 ===================== -->
+        <div class="inquiry-form__section" data-animate="fade-up">
+          <div class="inquiry-form__section-header">
+            <h2 class="inquiry-form__section-title" data-i18n="inquiry.section.title">문의 항목</h2>
+            <p class="inquiry-form__section-note" data-i18n="inquiry.section.note">필수 입력 항목입니다</p>
+          </div>
+
+          <div class="inquiry-form__fields">
+            <!-- 이름 -->
+            <div class="inquiry-field">
+              <label class="inquiry-field__label" for="inq-name"><span data-i18n="inquiry.label.name">이름</span> <span class="inquiry-field__required">*</span></label>
+              <div class="inquiry-field__input-area">
+                <input class="inquiry-field__input" type="text" id="inq-name" name="name" required placeholder="이름">
+              </div>
+            </div>
+
+            <!-- 이메일 -->
+            <div class="inquiry-field">
+              <label class="inquiry-field__label" for="inq-email-local"><span data-i18n="inquiry.label.email">이메일</span> <span class="inquiry-field__required">*</span></label>
+              <div class="inquiry-field__input-area inquiry-field__input-area--email">
+                <input class="inquiry-field__input" type="text" id="inq-email-local" name="email_local" required placeholder="이메일">
+                <span class="inquiry-field__at">@</span>
+                <input class="inquiry-field__input" type="text" id="inq-email-domain-input" name="email_domain_input" placeholder="직접입력">
+                <select class="inquiry-field__select" id="inq-email-domain" name="email_domain" aria-label="이메일 도메인 선택">
+                  <option value="">직접입력</option>
+                  <option value="gmail.com">gmail.com</option>
+                  <option value="naver.com">naver.com</option>
+                  <option value="daum.net">daum.net</option>
+                  <option value="hanmail.net">hanmail.net</option>
+                  <option value="kakao.com">kakao.com</option>
+                  <option value="nate.com">nate.com</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- 문의 유형 -->
+            <div class="inquiry-field">
+              <label class="inquiry-field__label" for="inq-type" data-i18n="inquiry.label.type">문의 유형</label>
+              <div class="inquiry-field__input-area">
+                <select class="inquiry-field__select inquiry-field__select--full" id="inq-type" name="inquiry_type">
+                  <option value="">문의 유형</option>
+                  <option value="quote">견적 문의</option>
+                  <option value="product">제품 문의</option>
+                  <option value="service">서비스 문의</option>
+                  <option value="partnership">제휴/협력 문의</option>
+                  <option value="etc">기타</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- 연락처 -->
+            <div class="inquiry-field">
+              <label class="inquiry-field__label" for="inq-phone-prefix"><span data-i18n="inquiry.label.phone">연락처</span> <span class="inquiry-field__required">*</span></label>
+              <div class="inquiry-field__input-area inquiry-field__input-area--phone">
+                <select class="inquiry-field__select inquiry-field__select--phone" id="inq-phone-prefix" name="phone_prefix" aria-label="연락처 앞자리">
+                  <option value="010">010</option>
+                  <option value="011">011</option>
+                  <option value="016">016</option>
+                  <option value="017">017</option>
+                  <option value="018">018</option>
+                  <option value="019">019</option>
+                  <option value="02">02</option>
+                  <option value="031">031</option>
+                  <option value="032">032</option>
+                </select>
+                <span class="inquiry-field__dash">-</span>
+                <input class="inquiry-field__input inquiry-field__input--phone" type="tel" id="inq-phone-mid" name="phone_mid" required maxlength="4" placeholder="">
+                <span class="inquiry-field__dash">-</span>
+                <input class="inquiry-field__input inquiry-field__input--phone" type="tel" id="inq-phone-last" name="phone_last" required maxlength="4" placeholder="">
+              </div>
+            </div>
+
+            <!-- 내용 -->
+            <div class="inquiry-field">
+              <label class="inquiry-field__label" for="inq-content"><span data-i18n="inquiry.label.content">내용</span> <span class="inquiry-field__required">*</span></label>
+              <div class="inquiry-field__input-area">
+                <textarea class="inquiry-field__textarea" id="inq-content" name="content" required rows="10" placeholder="문의 내용을 입력해 주세요."></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================== 개인정보수집 동의 ===================== -->
+        <div class="inquiry-form__section inquiry-form__section--privacy" data-animate="fade-up">
+          <h2 class="inquiry-form__section-title" data-i18n="inquiry.privacy.title">개인정보수집 및 이용에 대한 동의</h2>
+          <div class="inquiry-privacy">
+            <div class="inquiry-privacy__box">
+              <p>주식회사 ATI(이하 "회사")은 견적 문의에 대한 처리를 위해 아래와 같이 개인정보를 수집·이용합니다.</p>
+              <p><strong>■ 수집 항목</strong><br>
+              - 이름<br>
+              - 이메일 주소<br>
+              - 연락처<br>
+              - 소속 기관<br>
+              - 사용 목적<br>
+              - 문의 제품<br>
+              - 문의 내용<br>
+              - 그 외 주소 등 구체적인 견적 산출을 위해 추가 정보가 요구될 수 있습니다.</p>
+              <p><strong>■ 이용 목적</strong><br>
+              - 장비 및 솔루션 견적 안내<br>
+              - 제품 및 서비스 상담<br>
+              - 문의 응대 및 고객 관리</p>
+              <p><strong>■ 보유 및 이용 기간</strong><br>
+              - 문의 처리 완료 후 2년간 보관 후 파기</p>
+              <p>이용자는 개인정보 수집·이용에 대한 동의를 거부할 수 있습니다. 단, 동의 거부 시 견적 상담 서비스 이용이 제한될 수 있습니다.</p>
+            </div>
+            <label class="inquiry-privacy__agree">
+              <input type="checkbox" id="inq-agree" name="agree" required>
+              <span class="inquiry-privacy__checkbox"></span>
+              <span class="inquiry-privacy__text"><span class="inquiry-privacy__required">(필수)</span> 동의합니다</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ===================== 버튼 ===================== -->
+        <div class="inquiry-form__actions" data-animate="fade-up">
+          <button type="reset" class="inquiry-btn inquiry-btn--cancel" data-i18n="inquiry.btn.cancel">취소하기</button>
+          <button type="submit" class="inquiry-btn inquiry-btn--submit" data-i18n="inquiry.btn.submit">등록하기</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer__panel">
+      <div class="footer__card">
+        <div class="footer__top">
+          <a href="index.html" class="footer__logo" aria-label="ATI - Advanced Technology Inc.">
+            <img src="assets/images/ATI_Logo_white.png" alt="ATI - Advanced Technology Inc. 로고">
+          </a>
+        </div>
+        <div class="footer__links">
+          <div class="footer__column">
+            <h4 class="footer__column-title" data-i18n="footer.col.ati">ATI</h4>
+            <ul>
+              <li><a href="about.html" data-i18n="footer.aboutAti">About ATI</a></li>
+              <li><a href="about.html#history" data-i18n="footer.history">History</a></li>
+              <li><a href="about.html#esg" data-i18n="footer.esg">ESG</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title" data-i18n="footer.col.products">Products</h4>
+            <ul>
+              <li><a href="products-semiconductor.html" data-i18n="footer.semiApp">Semiconductor Applications</a></li>
+              <li><a href="products-wafer.html" data-i18n="footer.wafer">Wafer</a></li>
+              <li><a href="products-reticle.html" data-i18n="footer.reticle">Reticle</a></li>
+              <li><a href="products-package.html" data-i18n="footer.package">Package</a></li>
+              <li><a href="products-pcb.html" data-i18n="footer.pcbApp">PCB Applications</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title" data-i18n="footer.col.solutions">Solution &amp; Services</h4>
+            <ul>
+              <li><a href="solutions-ai.html" data-i18n="mega.aiTech">AI Technology</a></li>
+              <li><a href="solutions-ai.html#howto" data-i18n="mega.customSol">Custom Solutions</a></li>
+              <li><a href="services.html" data-i18n="mega.services">Services</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title" data-i18n="footer.col.support">Customer Support</h4>
+            <ul>
+              <li><a href="news.html" data-i18n="mega.news">News</a></li>
+              <li><a href="contact.html" data-i18n="mega.contactUs">Contact Us</a></li>
+              <li><a href="faq.html" data-i18n="mega.faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer__side">
+            <div class="footer__lang">
+              <select id="lang-select" class="footer__lang-select" aria-label="언어 선택 / Language">
+                <option value="ko">KR</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
+            <a href="https://www.youtube.com/@advancedtechnologyinc.4357/" target="_blank" rel="noopener noreferrer" class="footer__youtube" aria-label="ATI YouTube">
+              <img src="assets/images/youtube logo 07.png" alt="YouTube">
+            </a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__contact">
+            <span><strong data-i18n="footer.address">Address</strong> <span data-i18n="footer.addressValue">41, Songdo Mirae-ro, Yeonsu-gu, Incheon, South Korea</span></span>
+            <span><strong data-i18n="footer.phone">Phone.</strong> 82-32-851-5301~4</span>
+            <span><strong data-i18n="footer.fax">Fax.</strong> 82-32-851-5301~5</span>
+          </div>
+          <p class="footer__copyright" data-i18n="footer.copyright">&copy; Copyright 2018 - 2026 | Advanced Technology Inc. | All Rights Reserved | Powered by Sales Team</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-top" id="scroll-top">
+    <button class="scroll-top__btn scroll-top__btn--up" id="scroll-top-btn" aria-label="맨 위로">
+      <svg width="15" height="31" viewBox="0 0 9.512 16.44" fill="none">
+        <path d="M9.133 9.133L1.826 16.44 0 14.614l6.394-6.394L0 1.826 1.826 0l7.307 7.307a1.22 1.22 0 010 1.826z" fill="white"/>
+      </svg>
+    </button>
+    <button class="scroll-top__btn scroll-top__btn--down" id="scroll-down-btn" aria-label="아래로">
+      <svg width="15" height="31" viewBox="0 0 9.512 16.44" fill="none">
+        <path d="M9.133 9.133L1.826 16.44 0 14.614l6.394-6.394L0 1.826 1.826 0l7.307 7.307a1.22 1.22 0 010 1.826z" fill="#E51415"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/controls/navigation.js"></script>
+  <script src="js/controls/scroll-animations.js"></script>
+  <script src="js/controls/i18n.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof Navigation !== 'undefined') Navigation.init();
+      if (typeof ScrollAnimations !== 'undefined') ScrollAnimations.init();
+      if (typeof I18n !== 'undefined') I18n.init();
+
+      var domainSelect = document.getElementById('inq-email-domain');
+      var domainInput = document.getElementById('inq-email-domain-input');
+      if (domainSelect && domainInput) {
+        domainSelect.addEventListener('change', function () {
+          if (domainSelect.value) {
+            domainInput.value = domainSelect.value;
+            domainInput.readOnly = true;
+          } else {
+            domainInput.value = '';
+            domainInput.readOnly = false;
+            domainInput.focus();
+          }
+        });
+      }
+
+      var form = document.getElementById('inquiry-form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var agree = document.getElementById('inq-agree');
+          if (!agree.checked) {
+            alert('개인정보수집 및 이용에 동의해 주세요.');
+            agree.focus();
+            return;
+          }
+          alert('문의가 등록되었습니다. 감사합니다.');
+          form.reset();
+          if (domainInput) { domainInput.readOnly = false; }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -58,6 +58,8 @@ const I18n = (function () {
     // ===== News =====
     'news.title':    { en: 'News & Events', ko: '뉴스 및 이벤트' },
     'news.subtitle': { en: "What's Happening at ATI", ko: 'ATI의 새로운 소식을 전해드립니다' },
+    'news.hero.eyebrow': { en: 'Customer Support', ko: '고객지원' },
+    'news.hero.title':   { en: 'News & Events', ko: '뉴스 및 이벤트' },
 
     // ===== Products Cards =====
     // 색상을 바꾸고 싶은 부분은 아래 <span style="color:..."> 값만 수정하면 됩니다.
@@ -298,7 +300,257 @@ const I18n = (function () {
     'pcb.process.title': {
       en: 'One continuous flow of\n<span>a 6-step precision process</span>',
       ko: '하나로 이어지는 흐름,\n<span>6단계 정밀 공정</span>'
-    }
+    },
+
+    // ===== Solution & Services - AI Technology (solutions-ai.html) =====
+    'sai.hero.desc1': {
+      en: 'ATI’s AI technology brings intelligent defect detection and classification to the PCB and package inspection process. Our AI System is designed to improve accuracy, reduce false calls, and speed up recipe setup and production ramp.',
+      ko: 'ATI의 AI 기술은 PCB·패키지 검사 공정에 지능형 결함 검출과 분류를 제공합니다. ATI AI 시스템은 정확도를 높이고 오검출(False Call)을 줄이며, 레시피 셋업과 양산 램프업 속도를 단축하도록 설계되었습니다.'
+    },
+    'sai.hero.desc2': {
+      en: 'Leveraging deep learning and computer vision, the system learns from your process and defect libraries to classify defects consistently and support ADC (Automatic Defect Classification) and binning. This reduces dependency on manual review and helps production lines achieve higher throughput and better yield management.',
+      ko: '딥러닝과 컴퓨터 비전을 활용해 고객의 공정과 결함 라이브러리를 학습하고, 결함을 일관되게 분류하며 ADC(자동 결함 분류)와 비닝을 지원합니다. 이를 통해 수동 검토 의존도를 낮추고, 생산 라인의 처리량과 수율 관리 수준을 함께 향상시킵니다.'
+    },
+    'sai.cap.title': { en: 'Key Capabilities', ko: '핵심 역량' },
+    'sai.cap.lead': {
+      en: 'ATI develops AI and software in-house as part of our five pillars of excellence, ensuring that our inspection systems deliver not only hardware precision but also intelligent, adaptable software that meets the evolving needs of the semiconductor and PCB industries.',
+      ko: 'ATI는 5대 핵심 역량의 일환으로 AI와 소프트웨어를 자체 개발합니다. 이를 통해 검사 시스템이 하드웨어의 정밀성뿐 아니라, 반도체·PCB 산업의 변화하는 요구에 대응하는 지능적이고 유연한 소프트웨어까지 함께 제공합니다.'
+    },
+    'sai.cap.c1': { en: 'Deep-learning-based defect classification and binning for PCB and package inspection', ko: 'PCB·패키지 검사를 위한 딥러닝 기반 결함 분류 및 비닝' },
+    'sai.cap.c2': { en: 'Recipe auto-creation and adaptive algorithms to shorten setup and ramp time', ko: '셋업·램프업 시간을 단축하는 레시피 자동 생성 및 적응형 알고리즘' },
+    'sai.cap.c3': { en: 'Scalable architecture to support multiple inspection tools and factory analytics', ko: '다수 검사 장비와 팩토리 분석을 지원하는 확장형 아키텍처' },
+    'sai.cap.c4': { en: 'Integration with ATI inspection platforms for seamless data flow and review', ko: '끊김 없는 데이터 흐름과 리뷰를 위한 ATI 검사 플랫폼 연동' },
+
+    'sai.tail.title': { en: 'Tailored Equipment, Machines, and Software', ko: '맞춤형 장비·머신·소프트웨어' },
+    'sai.tail.lead': {
+      en: 'ATI provides custom equipment, machines, and software solutions to meet each customer’s specific process and technical requirements. Our ability to deliver these solutions is rooted in the five pillars of excellence described on our <a href="about.html#vision" target="_self">Mission and Vision</a> page: Optics, Software &amp; AI, Automation, Inspection, and Metrology. Because we develop all core technologies in-house, we can adapt and integrate every part of the system to your needs.',
+      ko: 'ATI는 고객별 공정과 기술 요구에 맞춰 맞춤형 장비, 머신, 소프트웨어 솔루션을 제공합니다. 이러한 역량은 <a href="about.html#vision" target="_self">미션과 비전</a> 페이지에서 소개하는 5대 핵심 역량 — Optics, Software &amp; AI, Automation, Inspection, Metrology — 에 뿌리를 두고 있습니다. 핵심 기술을 모두 자체 개발하기에, 시스템의 모든 부분을 고객 요구에 맞게 조정하고 통합할 수 있습니다.'
+    },
+    'sai.tail.cap1': { en: 'Tailored Equipment', ko: '맞춤형 장비' },
+    'sai.tail.cap2': { en: 'Machines', ko: '머신' },
+    'sai.tail.cap3': { en: 'Software', ko: '소프트웨어' },
+
+    'sai.howto.title': { en: 'How We Achieve Custom Solutions', ko: '맞춤형 솔루션을 구현하는 방법' },
+    'sai.howto.leadcard': { en: 'End-to-end customized solutions powered by in-house core technologies', ko: '자체 핵심 기술로 완성하는 엔드투엔드 맞춤형 솔루션' },
+    'sai.howto.body': {
+      en: '<p>ATI provides custom equipment, machines, and software solutions to meet each customer’s specific process and technical requirements. Our ability to deliver these solutions is rooted in the five pillars of excellence described on our <a href="about.html#vision">Mission and Vision</a> page:</p><p>Optics, Software &amp; AI, Automation, Inspection, and Metrology. Because we develop all core technologies in-house, we can adapt and integrate every part of the system to your needs.</p>',
+      ko: '<p>ATI는 고객별 공정과 기술 요구에 맞춰 맞춤형 장비, 머신, 소프트웨어 솔루션을 제공합니다. 이러한 역량은 <a href="about.html#vision">미션과 비전</a> 페이지에서 소개하는 5대 핵심 역량에 뿌리를 두고 있습니다:</p><p>Optics, Software &amp; AI, Automation, Inspection, Metrology. 핵심 기술을 모두 자체 개발하기에, 시스템의 모든 부분을 고객 요구에 맞게 조정하고 통합할 수 있습니다.</p>'
+    },
+    'sai.pillar.optics': { en: 'Optics:', ko: 'Optics:' },
+    'sai.pillar.opticsDesc': {
+      en: 'Custom illumination, magnification, and optical paths can be designed for your wafer size, defect types, or package geometry.',
+      ko: '웨이퍼 크기, 결함 유형, 패키지 형상에 맞춰 조명·배율·광학 경로를 맞춤 설계할 수 있습니다.'
+    },
+    'sai.pillar.software': { en: 'Software & AI', ko: 'Software & AI' },
+    'sai.pillar.softwareDesc': {
+      en: 'Custom illumination, magnification, and optical paths can be designed for your wafer size, defect types, or package geometry.',
+      ko: '공정과 결함 데이터를 학습하는 맞춤형 AI·소프트웨어로 일관된 결함 분류와 분석을 지원합니다.'
+    },
+    'sai.pillar.automation': { en: 'Automation', ko: 'Automation' },
+    'sai.pillar.automationDesc': {
+      en: 'Handling configurations—load ports, cassettes, magazines, stack-to-stack—can be specified and integrated.',
+      ko: '로드포트, 카세트, 매거진, 스택투스택 등 핸들링 구성을 지정하고 라인에 맞게 통합할 수 있습니다.'
+    },
+    'sai.pillar.inspection': { en: 'Inspection', ko: 'Inspection' },
+    'sai.pillar.inspectionDesc': {
+      en: 'Inspection strategies (bright field, dark field, 2D/3D, color, IR) and sensitivity targets can be tuned for your applications.',
+      ko: '검사 전략(명시야, 암시야, 2D/3D, 컬러, IR)과 감도 목표를 응용 분야에 맞게 튜닝할 수 있습니다.'
+    },
+    'sai.pillar.metrology': { en: 'Metrology', ko: 'Metrology' },
+    'sai.pillar.metrologyDesc': {
+      en: 'Measurement algorithms and reporting (dimensions, heights, profiles, optical density) can be customized to your specs.',
+      ko: '측정 알고리즘과 리포팅(치수, 높이, 프로파일, 광학 밀도)을 고객 사양에 맞게 맞춤화할 수 있습니다.'
+    },
+    'sai.pillar.viewProduct': { en: 'View Product', ko: '제품 보기' },
+
+    // ===== FAQ 페이지 =====
+    'faq.hero.eyebrow': { en: 'Customer Support', ko: '고객지원' },
+    'faq.hero.title':   { en: 'FAQ', ko: '자주 묻는 질문' },
+    'faq.filter.all':       { en: 'All', ko: '전체' },
+    'faq.filter.company':   { en: 'Company', ko: '회사소개' },
+    'faq.filter.equipment': { en: 'Equipment', ko: '장비/시스템' },
+    'faq.filter.module':    { en: 'Modules', ko: '자동화 모듈' },
+    'faq.filter.gmp':       { en: 'GMP / Sterilization', ko: 'GMP·멸균' },
+    'faq.filter.software':  { en: 'Software', ko: '소프트웨어' },
+
+    // ===== Contact (문의하기) 페이지 =====
+    'inquiry.hero.eyebrow':  { en: 'Customer Support', ko: '고객지원' },
+    'inquiry.hero.title':    { en: 'Contact Us', ko: '문의하기' },
+    'inquiry.section.title': { en: 'Inquiry Details', ko: '문의 항목' },
+    'inquiry.section.note':  { en: 'Required fields', ko: '필수 입력 항목입니다' },
+    'inquiry.label.name':    { en: 'Name', ko: '이름' },
+    'inquiry.label.email':   { en: 'Email', ko: '이메일' },
+    'inquiry.label.type':    { en: 'Inquiry Type', ko: '문의 유형' },
+    'inquiry.label.phone':   { en: 'Phone', ko: '연락처' },
+    'inquiry.label.content': { en: 'Message', ko: '내용' },
+    'inquiry.privacy.title': { en: 'Consent to Collection and Use of Personal Information', ko: '개인정보수집 및 이용에 대한 동의' },
+    'inquiry.privacy.agree': { en: 'I agree', ko: '동의합니다' },
+    'inquiry.btn.cancel':    { en: 'Cancel', ko: '취소하기' },
+    'inquiry.btn.submit':    { en: 'Submit', ko: '등록하기' },
+
+    /* ===== Services — HQ & Office Locations ===== */
+    'svc.hero.eyebrow': { en: 'Services', ko: 'Services' },
+    'svc.hero.title1': { en: 'HQ & Office', ko: '본사 · 지사' },
+    'svc.hero.title2': { en: 'Locations', ko: '위치 안내' },
+    'svc.hq.title': { en: 'Headquarters (South Korea)', ko: '본사 (대한민국)' },
+    'svc.hq.addr': {
+      en: '41, Songdo Mirae-ro, Yeonsu-gu, Incheon, South Korea 21988 / 112 Gaetbeol-ro, Yeonsu-gu, Incheon, South Korea',
+      ko: '인천광역시 연수구 송도미래로 41 (21988) / 인천광역시 연수구 갯벌로 112'
+    },
+    'svc.domestic.title': { en: 'Domestic (Korea) Offices', ko: '국내 사업장' },
+    'svc.overseas.title': { en: 'Overseas Offices', ko: '해외 사업장' },
+
+    // ===== Product List Pages (tabs / cards) =====
+    'prodList.wafer.title':  { en: 'Wafer Inspection & Measurement', ko: '웨이퍼 검사 및 계측' },
+    'prodList.reticle.title': { en: 'Mask Inspection & Measurement', ko: '마스크 검사 및 계측' },
+    'prodList.package.title': { en: 'Package Inspection & Measurement', ko: '패키지 검사 및 계측' },
+    'prodTab.wafer':   { en: 'Wafer Inspection & Measurement', ko: '웨이퍼 검사 및 계측' },
+    'prodTab.reticle': { en: 'Mask Inspection & Measurement', ko: '마스크 검사 및 계측' },
+    'prodTab.package': { en: 'Package Inspection & Measurement', ko: '패키지 검사 및 계측' },
+    'prodTab.scroll':  { en: 'Scroll Down', ko: '스크롤 다운' },
+
+    'wcard.viewBtn':      { en: 'Product View', ko: '제품 보기' },
+    'wcard.c1.desc':      { en: 'High resolution & rapid wafer color inspection system', ko: '고해상도 및 고속 웨이퍼 컬러 검사 시스템' },
+    'wcard.tidal.desc':   { en: 'Wafer inspection & measurement', ko: '웨이퍼 검사 및 계측' },
+    'wcard.sgm.desc':     { en: 'Wafer Stress Gauge System', ko: '웨이퍼 스트레스 게이지 시스템' },
+    'wcard.d1.desc':      { en: 'Acoustic Internal Inspection System', ko: '음향 내부 검사 시스템' },
+    'wcard.oak3.desc':    { en: 'Auto Microscope System', ko: '자동 현미경 시스템' },
+    'wcard.putter2.desc': { en: 'Automated Bump Shear System', ko: '자동 범프 전단 시스템' },
+    'wcard.cam3.desc':    { en: 'Wafer Backside Thin Film Thickness Measurement', ko: '웨이퍼 후면 박막 두께 측정' },
+
+    // ===== Product Detail Pages (공통) =====
+    'prod.featTitle': { en: 'Product Features', ko: '제품 특징' },
+
+    // ===== C1 =====
+    'c1.sub':   { en: '<span class="accent">Wafer</span> Inspection & Measurement.', ko: '<span class="accent">웨이퍼</span> 검사 및 계측' },
+    'c1.lead':  { en: 'High resolution & rapid wafer color inspection system', ko: '고해상도 및 고속 웨이퍼 컬러 검사 시스템' },
+    'c1.feat1': { en: 'High-speed Colorful Inspection for Next-generation HBM4/4E', ko: '차세대 HBM4/4E 대응 고속 컬러 검사' },
+    'c1.feat2': { en: 'High Quality TDI Image (Mono/Color)', ko: '고품질 TDI 이미지 (Mono/Color)' },
+    'c1.feat3': { en: 'High Accuracy Stage, Real-time Auto Focus', ko: '고정밀 스테이지, 실시간 자동 초점' },
+    'c1.feat4': { en: 'Vision Review System', ko: '비전 리뷰 시스템' },
+    'c1.feat5': { en: 'Bright Field & Dark Field Inspection', ko: 'Bright Field & Dark Field 검사' },
+    'c1.feat6': { en: 'Multi Field Illumination', ko: '다중 필드 조명' },
+    'c1.feat7': { en: 'Capable of Full-wafer Inspection', ko: '전체 웨이퍼 검사 가능' },
+    'c1.front': {
+      en: 'Inspection : Die to die & Surface; Bright & Dark Field; IR Inspection (Void, Burnt). Measurement: Bump Height; Chip Warpage; IR Measurement (Accuracy). Application: Whole Wafer Image; ADC (Binning/Classification); RAC (Recipe Auto Create); Result Review System.',
+      ko: '검사 : Die to Die & 표면; Bright & Dark Field; IR 검사 (Void, Burnt). 측정 : 범프 높이; 칩 휨(Warpage); IR 측정 (정밀도). 응용 : 전체 웨이퍼 이미지; ADC (분류/등급 판정); RAC (레시피 자동 생성); 결과 리뷰 시스템.'
+    },
+    'c1.edge': {
+      en: 'Inspection : Crack, Scratch, Chipping; Discoloration, Foreign Materials. Measurement: PEL (Process End Line); Profile, Depth, Width. Application: ADC (Binning/Classification).',
+      ko: '검사 : 크랙, 스크래치, 치핑; 변색, 이물질. 측정 : PEL (Process End Line); 프로파일, 깊이, 폭. 응용 : ADC (분류/등급 판정).'
+    },
+    'c1.backside': {
+      en: 'Inspection : Color Inspection (3-Channel); Relative Algorithm. Application: ADC (Binning/Classification); Auto Focus & Illumination.',
+      ko: '검사 : 컬러 검사 (3채널); 상대 알고리즘. 응용 : ADC (분류/등급 판정); 자동 초점 & 조명.'
+    },
+
+    // ===== TIDAL =====
+    'tidal.sub':  { en: '<span class="accent">Wafer</span> Inspection and measurement system for semiconductor manufacturing.', ko: '<span class="accent">웨이퍼</span> 반도체 제조용 검사 및 계측 시스템' },
+    'tidal.lead': { en: 'High resolution & rapid wafer color inspection system', ko: '고해상도 및 고속 웨이퍼 컬러 검사 시스템' },
+    'tidal.feat1': { en: 'High-speed Colorful Inspection for Next-generation HBM4/4E', ko: '차세대 HBM4/4E 대응 고속 컬러 검사' },
+    'tidal.feat2': { en: 'High Quality TDI Image (Mono/Color)', ko: '고품질 TDI 이미지 (Mono/Color)' },
+    'tidal.feat3': { en: 'High Accuracy Stage, Real-time Auto Focus', ko: '고정밀 스테이지, 실시간 자동 초점' },
+    'tidal.feat4': { en: 'Vision Review System', ko: '비전 리뷰 시스템' },
+    'tidal.feat5': { en: 'Bright Field & Dark Field Inspection', ko: 'Bright Field & Dark Field 검사' },
+    'tidal.feat6': { en: 'Multi Field Illumination', ko: '다중 필드 조명' },
+    'tidal.feat7': { en: 'Capable of Full-wafer Inspection', ko: '전체 웨이퍼 검사 가능' },
+
+    // ===== SGM =====
+    'sgm.sub':   { en: 'Wafer Stress Gauge System', ko: '웨이퍼 스트레스 게이지 시스템' },
+    'sgm.lead':  { en: 'Wafer inspection and measurement system for semiconductor manufacturing.', ko: '반도체 제조를 위한 웨이퍼 검사 및 계측 시스템입니다.' },
+    'sgm.feat1': { en: 'Whole Wafer Scan with Interferometer', ko: '간섭계 기반 전체 웨이퍼 스캔' },
+    'sgm.feat2': { en: 'Chip Warpage / Height / Thickness Measurement', ko: '칩 휨(Warpage) / 높이 / 두께 측정' },
+    'sgm.feat3': { en: 'Wafer Warpage / Height / Thickness Measurement', ko: '웨이퍼 휨(Warpage) / 높이 / 두께 측정' },
+
+    // ===== D1 =====
+    'd1.sub':   { en: 'Acoustic Internal Inspection System', ko: '음향 내부 검사 시스템' },
+    'd1.lead':  { en: 'Wafer inspection and measurement system for semiconductor manufacturing.', ko: '반도체 제조를 위한 웨이퍼 검사 및 계측 시스템입니다.' },
+    'd1.feat1': { en: 'Internal Void and Crack Inspection', ko: '내부 보이드(Void) 및 크랙 검사' },
+    'd1.feat2': { en: 'Ultrasonic Pulses Penetrate The Sample and Reflect From Internal Interfaces, Allowing Precise Mapping of Internal Defects (Void, Crack)', ko: '초음파 펄스가 샘플을 투과하고 내부 계면에서 반사되어 내부 결함(보이드, 크랙)을 정밀하게 매핑합니다.' },
+
+    // ===== CAMELLIA3 =====
+    'cam3.sub':   { en: 'Wafer Backside Thin Film Thickness Measurement', ko: '웨이퍼 후면 박막 두께 측정' },
+    'cam3.lead':  { en: 'Wafer inspection and measurement system for semiconductor manufacturing.', ko: '반도체 제조를 위한 웨이퍼 검사 및 계측 시스템입니다.' },
+    'cam3.feat1': { en: 'SE and SR Optics For Higher Reliability', ko: '높은 신뢰성을 위한 SE 및 SR 광학 시스템' },
+    'cam3.feat2': { en: 'Capable of Measuring Up to 70% of the Backside', ko: '후면 최대 70%까지 측정 가능' },
+    'cam3.feat3': { en: 'In-house Material Property Analysis tool', ko: '자체 개발 소재 물성 분석 도구' },
+    'cam3.feat4': { en: 'Review System (Optional)', ko: '리뷰 시스템 (선택 사항)' },
+
+    // ===== OAK3 =====
+    'oak3.sub':   { en: 'Auto Microscope System', ko: '자동 현미경 시스템' },
+    'oak3.lead':  { en: 'Wafer inspection and measurement system for semiconductor manufacturing.', ko: '반도체 제조를 위한 웨이퍼 검사 및 계측 시스템입니다.' },
+    'oak3.feat1': { en: '2 Types of Review Mode (Direct, Manual)', ko: '2가지 리뷰 모드 (Direct, Manual)' },
+    'oak3.feat2': { en: 'KLARF / MAP file Automation', ko: 'KLARF / MAP 파일 자동화' },
+    'oak3.feat3': { en: 'CD Measurement', ko: 'CD 측정' },
+    'oak3.feat4': { en: 'Overlay / Overkill Review', ko: 'Overlay / Overkill 리뷰' },
+    'oak3.feat5': { en: 'Auto Focus / Image Saving', ko: '자동 초점 / 이미지 저장' },
+    'oak3.feat6': { en: 'Edge Inspection', ko: '엣지 검사' },
+
+    // ===== PUTTER2 =====
+    'putter2.sub':   { en: 'Automated Bump Shear System', ko: '자동 범프 전단 시스템' },
+    'putter2.lead':  { en: 'Wafer inspection and measurement system for semiconductor manufacturing.', ko: '반도체 제조를 위한 웨이퍼 검사 및 계측 시스템입니다.' },
+    'putter2.feat1': { en: 'Shear Force Measurement', ko: '전단력 측정' },
+    'putter2.feat2': { en: 'Shear Video and Image Review', ko: '전단 영상 및 이미지 리뷰' },
+    'putter2.feat3': { en: 'Shear Direction Control, Status Check', ko: '전단 방향 제어, 상태 확인' },
+    'putter2.feat4': { en: 'Capable of Shearing Bumps and Foreign Materials', ko: '범프 및 이물질 전단 가능' },
+    'putter2.feat5': { en: 'Shear Detection with Height Data', ko: '높이 데이터 기반 전단 감지' },
+
+    // ===== Reticle Product List (카드) =====
+    'rcard.intro':        { en: 'ATI reticle (mask) inspection and metrology systems support DUV and EUV masks for advanced semiconductor manufacturing, delivering defect detection and optical density measurement for critical mask qualification.', ko: 'ATI 레티클(마스크) 검사 및 계측 시스템은 첨단 반도체 제조를 위한 DUV 및 EUV 마스크를 지원하며, 핵심 마스크 인증을 위한 결함 검출 및 광학 밀도 측정을 제공합니다.' },
+    'rcard.sun2.desc':    { en: 'Reticle inspection system for DUV mask qualification', ko: 'DUV 마스크 인증용 레티클 검사 시스템' },
+    'rcard.vegad.desc':   { en: 'EUV reticle inspection system for advanced mask qualification', ko: '첨단 마스크 인증용 EUV 레티클 검사 시스템' },
+    'rcard.vegap.desc':   { en: 'EUV reticle inspection system for advanced mask qualification', ko: '첨단 마스크 인증용 EUV 레티클 검사 시스템' },
+    'rcard.roe1000.desc': { en: 'Reticle inspection and measurement system', ko: '레티클 검사 및 계측 시스템' },
+    'rcard.triton.desc':  { en: 'Reticle optical density measuring system for mask qualification', ko: '마스크 인증용 레티클 광학 밀도 측정 시스템' },
+
+    // ===== SUN2 =====
+    'sun2.sub':   { en: 'Reticle Macro Inspection System', ko: '레티클 매크로 검사 시스템' },
+    'sun2.lead':  { en: 'Reticle inspection system for DUV mask qualification.', ko: 'DUV 마스크 인증을 위한 레티클 검사 시스템입니다.' },
+    'sun2.feat1': { en: 'Reticle Pattern Inspection - Surface/D2D (Die to Die)', ko: '레티클 패턴 검사 - Surface/D2D (Die to Die)' },
+    'sun2.feat2': { en: 'Reticle Backside(Glass) Inspection', ko: '레티클 후면(유리) 검사' },
+    'sun2.feat3': { en: 'Pellicle Membrane Inspection', ko: '펠리클 멤브레인 검사' },
+    'sun2.feat4': { en: 'Automatic Determination of The Above and Below - Foreign Material\'s Position on the Pellicle(PIS)', ko: '펠리클 상/하 이물질 위치 자동 판별(PIS)' },
+    'sun2.feat5': { en: 'Pellicle Frame Inspection', ko: '펠리클 프레임 검사' },
+    'sun2.feat6': { en: 'Reticle Air blowing - Clean Dry Air (CDA) blow - PN2 (Pure N2) point blow', ko: '레티클 에어 블로잉 - CDA(Clean Dry Air) 블로우 - PN2(Pure N2) 포인트 블로우' },
+
+    // ===== VEGA-D =====
+    'vegad.sub':   { en: 'EUV Reticle After Develop & Etching Inspection System (ADI/AEI)', ko: 'EUV 레티클 현상 및 식각 후 검사 시스템 (ADI/AEI)' },
+    'vegad.lead':  { en: 'EUV reticle inspection system for advanced mask qualification.', ko: '첨단 마스크 인증을 위한 EUV 레티클 검사 시스템입니다.' },
+    'vegad.feat1': { en: 'After Bake Inspection (Surface of Reticle) - Surface/D2D (Die to Die)', ko: '베이크 후 검사 (레티클 표면) - Surface/D2D (Die to Die)' },
+    'vegad.feat2': { en: 'After Develop Inspection (Surface of Reticle) - Surface/D2D (Die to Die)', ko: '현상 후 검사 (레티클 표면) - Surface/D2D (Die to Die)' },
+    'vegad.feat3': { en: 'After Etching Inspection (Surface of Reticle) - Surface/D2D (Die to Die)', ko: '식각 후 검사 (레티클 표면) - Surface/D2D (Die to Die)' },
+
+    // ===== VEGA-P =====
+    'vegap.sub':   { en: 'EUV Dual-POD Inspection System', ko: 'EUV 듀얼 POD 검사 시스템' },
+    'vegap.lead':  { en: 'EUV reticle inspection system for advanced mask qualification.', ko: '첨단 마스크 인증을 위한 EUV 레티클 검사 시스템입니다.' },
+    'vegap.feat1': { en: 'EIP (EUV Inner POD) Inspection', ko: 'EIP (EUV Inner POD) 검사' },
+    'vegap.feat2': { en: 'EOP (EUV Outer POD) Inspection', ko: 'EOP (EUV Outer POD) 검사' },
+    'vegap.feat3': { en: 'EIP (EUV Inner POD) Particle Counting', ko: 'EIP (EUV Inner POD) 파티클 카운팅' },
+    'vegap.feat4': { en: 'EOP (EUV Outer POD) Particle Counting', ko: 'EOP (EUV Outer POD) 파티클 카운팅' },
+
+    // ===== ROE-1000 =====
+    'roe1000.sub':    { en: 'Reticle Outgoing Inspection System', ko: '레티클 출하 검사 시스템' },
+    'roe1000.lead':   { en: 'Reticle inspection and measurement system.', ko: '레티클 검사 및 계측 시스템입니다.' },
+    'roe1000.feat1':  { en: 'Fluid Foreign Materials on the Mask Glass Surface', ko: '마스크 유리 표면의 유동 이물질' },
+    'roe1000.feat2':  { en: 'Mask Scratches and Contamination', ko: '마스크 스크래치 및 오염' },
+    'roe1000.feat3':  { en: 'Pattern Array Shift & Rotation', ko: '패턴 배열 이동 및 회전' },
+    'roe1000.feat4':  { en: 'EUV Mask Edge Residue', ko: 'EUV 마스크 엣지 잔류물' },
+    'roe1000.feat5':  { en: 'Etch Quartz', ko: '식각 쿼츠' },
+    'roe1000.feat6':  { en: 'Broken Edge', ko: '엣지 파손' },
+    'roe1000.feat7':  { en: 'Barcode Scratch', ko: '바코드 스크래치' },
+    'roe1000.feat8':  { en: 'Pattern Discoloration', ko: '패턴 변색' },
+    'roe1000.feat9':  { en: 'Wafer Key Shift', ko: '웨이퍼 키 시프트' },
+    'roe1000.feat10': { en: 'Pellicle Foreign Materials/Scratch/Shift & Rotation', ko: '펠리클 이물질/스크래치/이동 및 회전' },
+    'roe1000.feat11': { en: 'Pellicle Haze', ko: '펠리클 헤이즈' },
+
+    // ===== TRITON =====
+    'triton.sub':   { en: 'EUV/DUV Reticle Optical Density Measurement System', ko: 'EUV/DUV 레티클 광학 밀도 측정 시스템' },
+    'triton.lead':  { en: 'Reticle optical density measuring system for mask qualification.', ko: '마스크 인증을 위한 레티클 광학 밀도 측정 시스템입니다.' },
+    'triton.feat1': { en: 'Thickness Measurement', ko: '두께 측정' },
+    'triton.feat2': { en: 'Reflectance Measurement', ko: '반사율 측정' },
+    'triton.feat3': { en: 'Transmittance Measurement', ko: '투과율 측정' },
+    'triton.feat4': { en: 'Phase Shift Measurement', ko: '위상 변이 측정' },
+    'triton.feat5': { en: 'Optical Density Measurement', ko: '광학 밀도 측정' }
   };
 
   let currentLang = DEFAULT_LANG;

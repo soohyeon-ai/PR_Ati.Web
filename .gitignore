@@ -1,0 +1,25 @@
+# IDE / Editor
+.vs/
+.vscode/
+.cursor/
+.claude/
+*.suo
+*.user
+*.sln
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Temp
+*.tmp
+*.log
+*.bak
+
+# Node (if added later)
+node_modules/
+package-lock.json
+
+# Build artifacts
+dist/

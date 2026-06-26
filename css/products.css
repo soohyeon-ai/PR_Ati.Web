@@ -17,8 +17,13 @@
 .prod-page.has-hero .header:not(.header--scrolled) .nav__link:hover {
   color: #fff;
 }
-.prod-page.has-hero .header:not(.header--scrolled) .header__logo img {
-  filter: brightness(0) invert(1);
+/* 로고 교체: 어두운 히어로에서는 흰색 로고, 스크롤 후 흰 헤더에서는 기본 로고 */
+.prod-page.has-hero .header__logo-img--dark { display: none; }
+.prod-page.has-hero .header:not(.header--scrolled) .header__logo-img--dark { display: block; }
+.prod-page.has-hero .header:not(.header--scrolled) .header__logo-img--light { display: none; }
+.prod-page.has-hero .header:not(.header--scrolled) .header__cta {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
 }
 .prod {
   display: block;
@@ -424,4 +429,83 @@
   }
   .prod-banner__dot { display: none; }
   .prod-banner__tab { font-size: 12px; }
+}
+
+/* =========================================================
+   Product Spec Table
+   ========================================================= */
+.prod-spec {
+  margin-top: 60px;
+}
+.prod-spec__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px;
+}
+.prod-spec__table th,
+.prod-spec__table td {
+  padding: 18px 24px;
+  border-bottom: 1px solid #e6e6e6;
+  text-align: center;
+  vertical-align: middle;
+}
+.prod-spec__table thead th {
+  background: #333;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  border-bottom: none;
+}
+.prod-spec__table tbody th {
+  background: #fafafa;
+  font-weight: 600;
+  color: #222;
+  width: 200px;
+  text-align: center;
+}
+.prod-spec__table tbody td {
+  color: #444;
+}
+.prod-spec__table tbody tr:last-child th,
+.prod-spec__table tbody tr:last-child td {
+  border-bottom: 2px solid #333;
+}
+
+/* Product Feature Images (full-width) */
+.prod-feat__full-img {
+  margin-top: 40px;
+}
+.prod-feat__full-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Feature Sub-sections */
+.prod-feat__section {
+  margin-top: 56px;
+}
+.prod-feat__section-title {
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 800;
+  color: #d50001;
+  margin-bottom: 24px;
+  font-family: 'Pretendard', sans-serif;
+}
+.prod-feat__section-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .prod-spec__table th,
+  .prod-spec__table td {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  .prod-spec__table tbody th {
+    width: 120px;
+  }
 }

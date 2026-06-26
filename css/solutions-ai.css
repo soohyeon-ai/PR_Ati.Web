@@ -1,0 +1,628 @@
+/* =========================================================
+   Solution & Services — AI Technology
+   - Figma: Web_Ati_ Solution & Services (591:1755)
+   - 핵심 인터랙션
+     1) 히어로 타이틀: 스크롤에 따라 회색 → 흰색으로 글자가 차오름
+     2) 전역 배경: 남색 → 흰색으로 스크롤 구간에서 자연스럽게 전환
+   ========================================================= */
+
+.sai-page {
+  background: #05081c;
+  color: #fff;
+}
+
+/* ===== 전역 배경 레이어 (JS가 색·글로우 투명도를 스크럽) ===== */
+.sai-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-color: #05081c;
+  will-change: background-color;
+}
+.sai-backdrop__glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 80% at 88% 12%, rgba(0, 10, 65, 0.85) 0%, rgba(4, 8, 34, 0.55) 42%, rgba(17, 21, 44, 0) 72%),
+    radial-gradient(90% 70% at 18% 78%, rgba(0, 10, 65, 0.85) 0%, rgba(4, 8, 34, 0.55)  45%, rgba(0, 0, 0, 0) 75%);
+  will-change: opacity;
+}
+/* 남색 배경 위에 아주 은은하게 깔리는 회로기판 패턴
+   (Figma: opacity-40 + mix-blend-multiply → 거의 보이지 않을 만큼 희미.
+    fixed 레이어에서 blend-mode 는 렌더 비용이 커서 낮은 불투명도로 대체) */
+.sai-backdrop__pattern {
+  position: absolute;
+  inset: 0;
+  background: url("../assets/images/ai-bg-circuit.png") center top / cover no-repeat;
+  opacity: 0.01;
+}
+
+/* ===== 굴절되는 프로스트 글래스 구체 =====
+   강한 backdrop blur 로 뒤 배경을 굴절시키듯 흐리고, 우윳빛 본체 +
+   사선 빛번짐 + 좌상단 스페큘러 + 또렷한 가장자리로 유리구슬을 표현한다. */
+.sai-orb {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  /* 굴절 느낌: 강한 블러 + 채도/명도 살짝 끌어올림 */
+  backdrop-filter: blur(18px) saturate(155%) brightness(1.08);
+  -webkit-backdrop-filter: blur(18px) saturate(155%) brightness(1.08);
+  /* 우윳빛 본체: 중앙은 비치고 가장자리로 갈수록 푸른빛이 짙어짐 */
+  background:
+    radial-gradient(118% 118% at 32% 24%,
+      rgba(255, 255, 255, 0.50) 0%,
+      rgba(228, 238, 255, 0.20) 28%,
+      rgba(150, 180, 226, 0.14) 56%,
+      rgba(82, 112, 168, 0.22) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    inset 0 7px 24px rgba(255, 255, 255, 0.45),
+    inset -8px -18px 44px rgba(7, 14, 34, 0.55),
+    inset 12px 10px 34px rgba(255, 255, 255, 0.14),
+    0 24px 54px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+/* 사선으로 지나가는 굴절 빛번짐 — 천천히 좌우로 흐르며 빛이 굴절되는 느낌 */
+.sai-orb::before {
+  content: '';
+  position: absolute;
+  inset: -10%;
+  border-radius: 0%;
+  background: linear-gradient(122deg,
+    transparent 28%,
+    rgba(255, 255, 255, 0.38) 46%,
+    rgba(255, 255, 255, 0.10) 56%,
+    transparent 68%);
+  filter: blur(7px);
+  animation: saiOrbSheen 9s ease-in-out infinite alternate;
+}
+/* 좌상단 스페큘러 점광 */
+.sai-orb::after {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 28%;
+  left: 17%;
+  top: 11%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(5px);
+}
+/* 구체 위치는 고정한다.
+   backdrop-filter 가 걸린 요소를 transform 으로 움직이면 매 프레임 배경을
+   다시 블러해야 해 성능이 급격히 떨어지므로, 부유 애니메이션 대신
+   내부 빛(sheen)만 흐르게 해 생동감을 준다. */
+.sai-orb--hero {
+  width: 200px;
+  height: 200px;
+  right: -42px;
+  bottom: -50px;
+}
+.sai-orb--card {
+  width: 96px;
+  height: 96px;
+  left: -28px;
+  top: -36px;
+}
+@keyframes saiOrbSheen {
+  0% { transform: translateX(-22%) rotate(-4deg); }
+  100% { transform: translateX(22%) rotate(4deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sai-orb, .sai-orb::before { animation: none; }
+}
+
+/* 헤더: 히어로(남색) 위에서는 투명 + 흰색 텍스트 오버레이 */
+.sai-page .header:not(.header--scrolled) {
+  background: transparent;
+  box-shadow: none;
+}
+.sai-page .header:not(.header--scrolled) .nav__link {
+  color: rgba(255, 255, 255, 0.85);
+}
+.sai-page .header:not(.header--scrolled) .nav__link:hover {
+  color: #fff;
+}
+/* 로고 교체: 어두운 히어로에서는 흰색 로고, 스크롤 후 흰 헤더에서는 기본 로고 */
+.sai-page .header__logo-img--dark { display: none; }
+.sai-page .header:not(.header--scrolled) .header__logo-img--dark { display: block; }
+.sai-page .header:not(.header--scrolled) .header__logo-img--light { display: none; }
+.sai-page .header:not(.header--scrolled) .header__cta {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+.sai {
+  position: relative;
+  z-index: 1;
+}
+
+/* 공통 스크롤 리빌 */
+.sai [data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--delay, 0ms);
+  will-change: opacity, transform;
+}
+.sai [data-animate].is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .sai [data-animate] { opacity: 1; transform: none; transition: none; }
+}
+
+/* ===================== HERO ===================== */
+/* 타이틀·본문·맵을 한 화면에 함께 고정(pin)하고, 그 동안 타이틀이 천천히
+   차오른다. 맵이 항상 바로 아래 보이므로 빈 공간이 생기지 않는다. */
+.sai-hero {
+  position: relative;
+  padding: 0 24px;
+}
+.sai-hero__track {
+  height: 185vh;            /* 고정 무대 + 채움에 쓰이는 스크롤 길이 */
+}
+.sai-hero__stage {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--header-height) + 6px) 0 18px;
+  gap: 0;
+}
+
+/* 스크롤 필 타이틀 */
+.sai-fill {
+  font-size: clamp(38px, 5.4vw, 60px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  max-width: 900px;
+}
+.sai-fill__ch {
+  color: rgba(255, 255, 255, 0.22);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+.sai-fill__ch.is-on {
+  color: #fff;
+  text-shadow: 0 0 20px rgba(120, 170, 255, 0.35);
+}
+
+.sai-hero__desc {
+  margin-top: 20px;
+  max-width: 840px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: clamp(15px, 1.5vw, 19px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sai-hero__visual {
+  position: relative;
+  margin: 24px auto 0;
+  width: fit-content;
+  max-width: min(100%, 1090px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 48px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+.sai-hero__visual img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  /* 타이틀·본문과 함께 한 화면에 들어오도록 높이를 제한 */
+  max-height: 40vh;
+  border-radius: 48px;
+}
+
+/* 모바일·모션 최소화: 고정 해제하고 일반 흐름으로 (맵 크기 제한도 해제) */
+@media (max-width: 760px), (prefers-reduced-motion: reduce) {
+  .sai-hero__track { height: auto; }
+  .sai-hero__stage {
+    position: static;
+    min-height: auto;
+    padding: calc(var(--header-height) + 24px) 0 0;
+  }
+  .sai-hero__visual img { max-height: none; }
+}
+
+/* ===================== KEY CAPABILITIES ===================== */
+.sai-cap {
+  padding: 90px 24px;
+}
+.sai-cap__inner {
+  max-width: 1215px;
+  margin: 0 auto;
+}
+.sai-cap__head {
+  max-width: 720px;
+}
+.sai-cap__title {
+  font-size: clamp(30px, 3.4vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+.sai-cap__lead {
+  margin-top: 18px;
+  font-size: clamp(15px, 1.4vw, 20px);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+.sai-cap__grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.sai-cap__card {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  min-height: 200px;
+  padding: 28px 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.18), 0 0 13px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.4s ease, border-color 0.4s ease;
+}
+.sai-cap__card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+.sai-cap__icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+.sai-cap__card p {
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 500;
+  line-height: 1.45;
+  color: #fff;
+}
+
+/* ===================== TAILORED EQUIPMENT ===================== */
+.sai-tailored {
+  padding: 70px 24px 110px;
+}
+.sai-tailored__inner {
+  max-width: 1215px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 72px;
+  align-items: center;
+}
+/* 핀 고정 스크롤: 섹션을 길게(JS가 height 지정) 만들고 내부를 sticky 로 고정.
+   고정된 동안 이미지가 하나씩 등장하고, 끝까지 스크롤하면 고정이 풀린다. */
+.sai-tailored.is-pinned {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.sai-tailored.is-pinned .sai-tailored__inner {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  align-content: center;
+}
+.sai-tailored__head {
+  text-align: right;
+}
+.sai-tailored__title {
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+.sai-tailored__lead {
+  margin-top: 18px;
+  font-size: clamp(15px, 1.4vw, 20px);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+.sai-tailored__lead a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* 왼쪽 이미지 계단식(지그재그) 배치 — 2열 그리드 + 대각선 캐스케이드 */
+.sai-tailored__media {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 28px;
+}
+.sai-tile--a { grid-column: 2; grid-row: 1; }                 /* Machines — 상단 우측 */
+.sai-tile--b { grid-column: 1; grid-row: 2; margin-top: -130px; } /* Tailored Equipment — 중단 좌측 */
+.sai-tile--c { grid-column: 2; grid-row: 3; margin-top: -130px; } /* Software — 하단 우측 */
+.sai-tile {
+  position: relative;
+  /* JS(initTailoredReveal)가 스크롤 진행도에 맞춰 .is-in 을 하나씩 부여 */
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.sai-tile.is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sai-tile { opacity: 1; transform: none; transition: none; }
+}
+.sai-tile__card {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  aspect-ratio: 322 / 410;
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.6);
+}
+.sai-tile__card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sai-tile:hover .sai-tile__card img { transform: scale(1.06); }
+.sai-tile figcaption {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ===================== HOW WE ACHIEVE (white) ===================== */
+.sai-howto {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  color: var(--color-text);
+  padding: 100px 24px;
+  border-radius: 60px 60px 0 0;
+  margin-top: 40px;
+}
+.sai-howto__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 64px;
+  align-items: start;
+}
+.sai-howto__title {
+  font-size: clamp(30px, 3.4vw, 40px);
+  font-weight: 600;
+  color: #323232;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+.sai-howto__lead-card {
+  margin-top: 22px;
+  padding: 24px 32px;
+  border-radius: 13px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: clamp(17px, 1.5vw, 20px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.sai-howto__body-card {
+  margin-top: 15px;
+  padding: 36px 34px;
+  border-radius: 13px;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 300;
+  line-height: 1.5;
+  color: #040404;
+}
+.sai-howto__body-card a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sai-howto__mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.sai-pillar {
+  position: relative;
+  min-height: 284px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.sai-pillar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sai-pillar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.4s ease;
+}
+.sai-pillar:hover img { transform: scale(1.06); }
+.sai-pillar:hover::before { background: rgba(0, 0, 0, 0.72); }
+.sai-pillar__body {
+  position: relative;
+  z-index: 2;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.sai-pillar__name {
+  font-size: 20px;
+  font-weight: 500;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sai-pillar__name--bold { font-weight: 700; }
+.sai-pillar__body p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 270px;
+  opacity: 0;
+  transform: translateY(12px);
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              margin 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sai-pillar:hover .sai-pillar__body p {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 200px;
+  margin-top: 14px;
+}
+.sai-pillar--cta {
+  background: var(--color-primary);
+}
+.sai-pillar--cta::before { display: none; }
+.sai-pillar--cta .sai-pillar__body {
+  flex: 1;
+  justify-content: space-between;
+}
+.sai-pillar__arrow {
+  align-self: flex-end;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+.sai-pillar--cta:hover .sai-pillar__arrow { transform: translateX(8px); }
+
+/* ===================== CONTACT CTA ===================== */
+.sai-contact {
+  position: relative;
+  z-index: 1;
+  background: #1f1f1f;
+  padding: 110px 24px;
+  overflow: hidden;
+}
+.sai-contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("../assets/images/hero-bg-tech.png") center/cover no-repeat;
+  opacity: 0.18;
+  mix-blend-mode: hard-light;
+}
+.sai-contact__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.sai-contact__eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+.sai-contact__title {
+  margin-top: 22px;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+}
+.sai-contact__btn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 30px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  background: #fff;
+  color: #191919;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.sai-contact__btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px -12px rgba(0, 0, 0, 0.6);
+}
+.sai-contact__visual {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 30px;
+  overflow: hidden;
+  aspect-ratio: 485 / 264;
+}
+.sai-contact__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 1024px) {
+  .sai-cap__grid { grid-template-columns: 1fr; }
+  .sai-tailored__inner { grid-template-columns: 1fr; gap: 48px; }
+  .sai-tailored__head { text-align: left; order: -1; }
+  .sai-howto__inner { grid-template-columns: 1fr; gap: 40px; }
+  .sai-contact__inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .sai-hero { padding-top: calc(var(--header-height) + 20px); }
+  .sai-hero__visual { border-radius: 24px; }
+  .sai-cap__card { flex-direction: column; text-align: center; gap: 20px; padding: 28px 24px; }
+  .sai-tailored__media { grid-template-columns: 1fr; gap: 36px; }
+  .sai-tile--a, .sai-tile--b, .sai-tile--c {
+    grid-column: 1;
+    margin-top: 0;
+  }
+  .sai-tile--a { grid-row: auto; }
+  .sai-tile--b { grid-row: auto; }
+  .sai-tile--c { grid-row: auto; }
+  .sai-tile__card { aspect-ratio: 16 / 10; }
+  .sai-orb--hero { width: 120px; height: 120px; right: -18px; bottom: -28px; }
+  .sai-howto { border-radius: 30px 30px 0 0; padding: 70px 20px; }
+  .sai-howto__mosaic { grid-template-columns: 1fr; }
+  .sai-contact { padding: 70px 20px; }
+}

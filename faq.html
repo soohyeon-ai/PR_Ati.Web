@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/images/ATI_favicon.ico">
+
+  <title>자주 묻는 질문 (FAQ) | Advanced Technology Inc.</title>
+  <meta name="description" content="ATI Biosystems 자주 묻는 질문 — 회사소개, 장비/시스템, 자동화 모듈, GMP·멸균, 소프트웨어에 대한 FAQ를 확인하세요.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://example.com/faq.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ATI - Advanced Technology Inc.">
+  <meta property="og:title" content="자주 묻는 질문 (FAQ) - Advanced Technology Inc.">
+  <meta property="og:description" content="ATI Biosystems FAQ — 회사소개, 장비/시스템, 자동화 모듈, GMP·멸균, 소프트웨어에 대한 질문과 답변.">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="theme-color" content="#E51415">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/controls.css">
+  <link rel="stylesheet" href="css/faq.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="faq-page">
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="assets/images/ATI_Logo_default.png" alt="ATI - Advanced Technology Inc. 로고">
+      </a>
+      <nav class="header__nav" id="main-nav">
+        <ul class="nav__list">
+          <li class="nav__item" data-menu="ati"><a href="about.html" class="nav__link" data-i18n="nav.ati">ATI</a></li>
+          <li class="nav__item" data-menu="products"><a href="products-semiconductor.html" class="nav__link" data-i18n="nav.products">Product &amp; Applications</a></li>
+          <li class="nav__item" data-menu="solutions"><a href="solutions-ai.html" class="nav__link" data-i18n="nav.solutions">Solution &amp; Services</a></li>
+          <li class="nav__item" data-menu="support"><a href="news.html" class="nav__link" data-i18n="nav.support">Customer Support</a></li>
+        </ul>
+        <div class="mega-menu" id="mega-menu">
+          <div class="mega-menu__inner">
+            <div class="mega-menu__column" data-col="ati">
+              <ul>
+                <li><a href="about.html" data-i18n="footer.aboutAti">About ATI</a></li>
+                <li><a href="about.html#history" data-i18n="footer.history">History</a></li>
+                <li><a href="about.html#esg" data-i18n="footer.esg">ESG</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__column" data-col="products">
+              <ul>
+                <li><a href="products-semiconductor.html" data-i18n="footer.semiApp">Semiconductor Applications</a></li>
+                <li><a href="products-pcb.html" data-i18n="footer.pcbApp">PCB Applications</a></li>
+                <li><a href="products-wafer.html" data-i18n="footer.wafer">Wafer</a></li>
+                <li><a href="products-reticle.html" data-i18n="footer.reticle">Reticle</a></li>
+                <li><a href="products-package.html" data-i18n="footer.package">Package</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__column" data-col="solutions">
+              <ul>
+                <li><a href="solutions-ai.html" data-i18n="mega.aiTech">AI Technology</a></li>
+                <li><a href="solutions-ai.html#howto" data-i18n="mega.customSol">Custom Solutions</a></li>
+                <li><a href="services.html" data-i18n="mega.services">Services</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__column" data-col="support">
+              <ul>
+                <li><a href="news.html" data-i18n="mega.news">News</a></li>
+                <li><a href="contact.html" data-i18n="mega.contactUs">Contact Us</a></li>
+                <li><a href="faq.html" data-i18n="mega.faq">FAQ</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <a href="contact.html" class="header__cta" data-i18n="nav.contact">문의하기</a>
+      <button class="header__mobile-toggle" id="mobile-toggle" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="faq">
+    <!-- ===================== HERO ===================== -->
+    <section class="faq-hero">
+      <div class="faq-hero__inner" data-animate="fade-up">
+        <p class="faq-hero__eyebrow" data-i18n="faq.hero.eyebrow">고객지원</p>
+        <h1 class="faq-hero__title" data-i18n="faq.hero.title">자주 묻는 질문</h1>
+      </div>
+    </section>
+
+    <div class="faq-container">
+      <!-- ===================== CATEGORY FILTER ===================== -->
+      <div class="faq-filter" data-animate="fade-up">
+        <button class="faq-filter__btn is-active" data-category="all" data-i18n="faq.filter.all">전체</button>
+        <button class="faq-filter__btn" data-category="company" data-i18n="faq.filter.company">회사소개</button>
+        <button class="faq-filter__btn" data-category="equipment" data-i18n="faq.filter.equipment">장비/시스템</button>
+        <button class="faq-filter__btn" data-category="module" data-i18n="faq.filter.module">자동화 모듈</button>
+        <button class="faq-filter__btn" data-category="gmp" data-i18n="faq.filter.gmp">GMP·멸균</button>
+        <button class="faq-filter__btn" data-category="software" data-i18n="faq.filter.software">소프트웨어</button>
+      </div>
+
+      <!-- ===================== FAQ LIST ===================== -->
+      <div class="faq-list" id="faq-list">
+
+        <!-- 회사소개 -->
+        <div class="faq-item" data-category="company">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">회사소개</span>
+              <span class="faq-item__question">ATI Biosystems는 어떤 일을 하나요?</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p>ATI Biosystems는 ATI의 자동화 기술을 바탕으로 Bio 실험실 자동화에 도전하기 위해 2010년부터 프로젝트를 시작한 조직/브랜드입니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="company">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">회사소개</span>
+              <span class="faq-item__question">ATI Biosystems에서 만들어진 장비는 어떤 것들이 있나요?</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p>연도별로 개발 장비가 정리되어 있습니다.</p>
+              <table class="faq-table">
+                <thead><tr><th>연도</th><th>내용</th></tr></thead>
+                <tbody>
+                  <tr><td>2016</td><td>세포 자동화 장비 시제품 개발 및 제작</td></tr>
+                  <tr><td>2018</td><td>플라스크 기반 자동 세포 배양 장비 개발 및 제작</td></tr>
+                  <tr><td>2020</td><td>플레이트 기반 자동 Cell expansion 장비 개발 및 제작</td></tr>
+                  <tr><td>2022</td><td>Isolator 프레임의 자동 NK 세포 배양 장비 개발 및 제작</td></tr>
+                  <tr><td>2024</td><td>GMP 환경에 준하는 자동 세포 배양 장비 개발 중</td></tr>
+                </tbody>
+              </table>
+              <p>세포 배양 자동화 장비를 단계적으로 고도화해온 내용입니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 장비/시스템 -->
+        <div class="faq-item" data-category="equipment">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">장비/시스템</span>
+              <span class="faq-item__question">플라스크 기반 자동 세포 배양장비를 자세히 소개해주세요.</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p><strong>구성 모듈:</strong> 디캐퍼, 그리퍼, Gantry robot, 5000ul pipette 대응 ADP, 자동 원심분리기, Vision deck, 자동 실시간 현미경, 소모품 저장소, Cell counter, Waste 처리 기술 등이 포함되어 있습니다.</p>
+              <p><strong>지원 프로토콜:</strong> Medium adding/exchanging, Subculture, Passaging, Cell observation/counting</p>
+              <p><strong>지원 소모품:</strong> 최대 100개의 T-75 flask</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="equipment">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">장비/시스템</span>
+              <span class="faq-item__question">플레이트 기반 자동 Cell expansion 장비를 자세히 소개해주세요.</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p><strong>메인 유닛:</strong> Dispenser, 4채널 Liquid handler</p>
+              <p><strong>구성 모듈:</strong> 자체 개발 Automation Incubator, Plate hotel, Barcode reader, 컬러 Microscope, Tilting deck, Suction unit, 6축 Robotics arm</p>
+              <p><strong>지원 프로토콜:</strong> Medium adding/exchanging, Subculture, Passaging, Cell observation</p>
+              <p>96-to-48, 48-to-12 Subculture 같은 작업을 지원합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="equipment">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">장비/시스템</span>
+              <span class="faq-item__question">Isolator 프레임의 자동 NK 세포 배양 장비를 자세히 소개해주세요.</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p><strong>장비명:</strong> HARMONi-NK</p>
+              <p><strong>구성 모듈:</strong> Automation Incubator, Barcode reader, 라인 스캔 Microscope, Tilting deck, Vision deck, 자동 원심분리기, 6축 Robotics arm</p>
+              <p><strong>지원 프로토콜:</strong> Medium adding, exchanging</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="equipment">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">장비/시스템</span>
+              <span class="faq-item__question">GMP 환경에 준하는 자동 세포 배양 장비를 자세히 소개해주세요.</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p><strong>프로젝트명:</strong> CELLi</p>
+              <p>장비 내부 환경을 ISO 기준 Class A 수준으로 유지하고, 외부 오염물질 유입을 막는 Isolator 프레임으로 구성됩니다.</p>
+              <p>내부 환경 모니터링은 파티클 카운터와 TSA 플레이트를 이용하며, 장비 내부/외부 간 세포와 소모품 전달은 Pass box를 통해서만 이루어집니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 자동화 모듈 -->
+        <div class="faq-item" data-category="module">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">자동화 모듈</span>
+              <span class="faq-item__question">ATI에서 개발한 모듈들을 소개해주세요.</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <table class="faq-table">
+                <thead><tr><th>모듈</th><th>내용 요약</th></tr></thead>
+                <tbody>
+                  <tr><td>리퀴드 핸들러</td><td>ADP를 이용해 Media change, Subculture 수행. Well plate 간 정량 이동 구현</td></tr>
+                  <tr><td>디스펜서</td><td>큰 용량의 Media를 정량 공급. Suction 노즐과 Sonication 세척 장치 포함</td></tr>
+                  <tr><td>자동 CO₂ 인큐베이터</td><td>Plate, Flask 등 소모품 자동 수납. Carousel, Automation door, handling robot 내장</td></tr>
+                  <tr><td>자동 이미징 장치</td><td>Area scan 또는 Line scan camera로 전체 이미지 저장/분석</td></tr>
+                  <tr><td>콜로니 피커</td><td>Single cell에서 배양된 cell을 다른 well plate로 이송. 개발 진행 중</td></tr>
+                  <tr><td>디캐퍼</td><td>로봇 암과 연동해 C-Tube 뚜껑을 열고 닫는 유닛</td></tr>
+                  <tr><td>오비탈 셰이커</td><td>인큐베이터 내부에 설치하는 진탕 배양 장치</td></tr>
+                  <tr><td>Suction unit</td><td>사용 완료된 media를 흡인 폐기하고, 알코올 Sonication으로 멸균</td></tr>
+                </tbody>
+              </table>
+              <p>상세 스펙은 별도 문의 또는 PDF 자료를 통해 확인 가능합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="module">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">자동화 모듈</span>
+              <span class="faq-item__question">ATI에서 개발한 핵심 모듈만 따로 상품으로 판매하나요?</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p><strong>아니오.</strong> 기본적으로 자동화 공정 안에 포함되어 앞뒤 공정과의 연계를 고려해 개발되기 때문에, 별도 모듈로 판매하지는 않습니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="module software">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">자동화 모듈</span>
+              <span class="faq-item__question">자동 Microscope로 가능한 작업을 소개해주세요.</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p>용도에 따라 다양한 Microscope를 맞춤 제작할 수 있습니다.</p>
+              <p><strong>기본형:</strong> 4x 해상도 컬러 Area scan 카메라를 탑재합니다.</p>
+              <p><strong>속도형:</strong> Line scan 카메라를 사용해 1개 플레이트 전체를 약 1분 안에 스캔할 수 있습니다.</p>
+              <p>저장된 이미지는 리뷰, DB화, 이력 관리, 역추적이 가능하고, 콜로니 관찰을 위한 Phase contrast 필터와 특정 지점 관찰을 위한 Live scan도 지원합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GMP·멸균 -->
+        <div class="faq-item" data-category="gmp">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">GMP·멸균</span>
+              <span class="faq-item__question">장비를 GMP 시설에서 사용할 수 있나요?</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p><strong>네.</strong> 개발 장비는 내부를 Class A 수준 환경으로 유지하고, TSA Plate와 파티클 카운터를 이용한 환경 모니터링을 지원합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="gmp">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">GMP·멸균</span>
+              <span class="faq-item__question">모듈이나 장비 내부의 멸균 작업은 어떻게 수행하나요?</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p>알코올 소독, 건열, 습열, VHP 훈증 등 여러 방법을 적용할 수 있지만, 자동화 장비 특성상 제어장치가 노출되는 경우가 많아서 <strong>VHP 훈증 방식</strong>을 채용합니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="gmp">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">GMP·멸균</span>
+              <span class="faq-item__question">CELLi에 사용되는 환경 모니터링의 종류를 알려주세요.</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p>CELLi 환경 모니터링/관리 요소는 다음과 같습니다.</p>
+              <ul>
+                <li>VHP 멸균 시스템</li>
+                <li>UV 램프</li>
+                <li>PMS 파티클 카운터</li>
+                <li>PMS TSA 샘플러</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 소프트웨어 -->
+        <div class="faq-item" data-category="software">
+          <button class="faq-item__header" aria-expanded="false">
+            <div class="faq-item__left">
+              <span class="faq-item__badge">소프트웨어</span>
+              <span class="faq-item__question">장비 제어 및 프로토콜 관리 SW는 무엇을 사용하나요?</span>
+            </div>
+            <span class="faq-item__arrow" aria-hidden="true">
+              <svg width="18" height="10" viewBox="0 0 18 10" fill="none"><path d="M1 1l8 8 8-8" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <div class="faq-item__answer">
+            <div class="faq-item__answer-inner">
+              <p>자체 제작한 SW를 사용하여 장비 제어와 프로토콜 관리를 수행합니다.</p>
+              <table class="faq-table">
+                <thead><tr><th>항목</th><th>내용</th></tr></thead>
+                <tbody>
+                  <tr><td>제어 SW</td><td>자체 제작 SW 사용</td></tr>
+                  <tr><td>UI/프로토콜</td><td>고객사가 원하는 형식으로 변경 가능</td></tr>
+                  <tr><td>규정 대응</td><td>21 CFR Part 11에 맞는 전자서명, 기록, 보안 정책 준수</td></tr>
+                  <tr><td>AI 기능</td><td>세포 인식, Confluency 계산 가능</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.faq-list -->
+    </div><!-- /.faq-container -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer__panel">
+      <div class="footer__card">
+        <div class="footer__top">
+          <a href="index.html" class="footer__logo" aria-label="ATI - Advanced Technology Inc.">
+            <img src="assets/images/ATI_Logo_white.png" alt="ATI - Advanced Technology Inc. 로고">
+          </a>
+        </div>
+        <div class="footer__links">
+          <div class="footer__column">
+            <h4 class="footer__column-title" data-i18n="footer.col.ati">ATI</h4>
+            <ul>
+              <li><a href="about.html" data-i18n="footer.aboutAti">About ATI</a></li>
+              <li><a href="about.html#history" data-i18n="footer.history">History</a></li>
+              <li><a href="about.html#esg" data-i18n="footer.esg">ESG</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title" data-i18n="footer.col.products">Products</h4>
+            <ul>
+              <li><a href="products-semiconductor.html" data-i18n="footer.semiApp">Semiconductor Applications</a></li>
+              <li><a href="products-wafer.html" data-i18n="footer.wafer">Wafer</a></li>
+              <li><a href="products-reticle.html" data-i18n="footer.reticle">Reticle</a></li>
+              <li><a href="products-package.html" data-i18n="footer.package">Package</a></li>
+              <li><a href="products-pcb.html" data-i18n="footer.pcbApp">PCB Applications</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title" data-i18n="footer.col.solutions">Solution &amp; Services</h4>
+            <ul>
+              <li><a href="solutions-ai.html" data-i18n="mega.aiTech">AI Technology</a></li>
+              <li><a href="solutions-ai.html#howto" data-i18n="mega.customSol">Custom Solutions</a></li>
+              <li><a href="services.html" data-i18n="mega.services">Services</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title" data-i18n="footer.col.support">Customer Support</h4>
+            <ul>
+              <li><a href="news.html" data-i18n="mega.news">News</a></li>
+              <li><a href="contact.html" data-i18n="mega.contactUs">Contact Us</a></li>
+              <li><a href="faq.html" data-i18n="mega.faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer__side">
+            <div class="footer__lang">
+              <select id="lang-select" class="footer__lang-select" aria-label="언어 선택 / Language">
+                <option value="ko">KR</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
+            <a href="https://www.youtube.com/@advancedtechnologyinc.4357/" target="_blank" rel="noopener noreferrer" class="footer__youtube" aria-label="ATI YouTube">
+              <img src="assets/images/youtube logo 07.png" alt="YouTube">
+            </a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__contact">
+            <span><strong data-i18n="footer.address">Address</strong> <span data-i18n="footer.addressValue">41, Songdo Mirae-ro, Yeonsu-gu, Incheon, South Korea</span></span>
+            <span><strong data-i18n="footer.phone">Phone.</strong> 82-32-851-5301~4</span>
+            <span><strong data-i18n="footer.fax">Fax.</strong> 82-32-851-5301~5</span>
+          </div>
+          <p class="footer__copyright" data-i18n="footer.copyright">&copy; Copyright 2018 - 2026 | Advanced Technology Inc. | All Rights Reserved | Powered by Sales Team</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-top" id="scroll-top">
+    <button class="scroll-top__btn scroll-top__btn--up" id="scroll-top-btn" aria-label="맨 위로">
+      <svg width="15" height="31" viewBox="0 0 9.512 16.44" fill="none">
+        <path d="M9.133 9.133L1.826 16.44 0 14.614l6.394-6.394L0 1.826 1.826 0l7.307 7.307a1.22 1.22 0 010 1.826z" fill="white"/>
+      </svg>
+    </button>
+    <button class="scroll-top__btn scroll-top__btn--down" id="scroll-down-btn" aria-label="아래로">
+      <svg width="15" height="31" viewBox="0 0 9.512 16.44" fill="none">
+        <path d="M9.133 9.133L1.826 16.44 0 14.614l6.394-6.394L0 1.826 1.826 0l7.307 7.307a1.22 1.22 0 010 1.826z" fill="#E51415"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/controls/navigation.js"></script>
+  <script src="js/controls/scroll-animations.js"></script>
+  <script src="js/controls/faq.js"></script>
+  <script src="js/controls/i18n.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof Navigation !== 'undefined') Navigation.init();
+      if (typeof ScrollAnimations !== 'undefined') ScrollAnimations.init();
+      if (typeof FaqControl !== 'undefined') FaqControl.init();
+      if (typeof I18n !== 'undefined') I18n.init();
+    });
+  </script>
+</body>
+</html>
