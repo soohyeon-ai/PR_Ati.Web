@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -29,14 +29,15 @@
   <header class="header" id="header">
     <div class="header__inner">
       <a href="index.html" class="header__logo">
-        <img src="assets/images/ati-logo-wide.png" alt="ATI - Advanced Technology Inc. 로고">
+        <img class="header__logo-img header__logo-img--dark" src="assets/images/ATI_Logo_white.png" alt="ATI - Advanced Technology Inc. 로고">
+        <img class="header__logo-img header__logo-img--light" src="assets/images/ATI_Logo_default.png" alt="" aria-hidden="true">
       </a>
       <nav class="header__nav" id="main-nav">
         <ul class="nav__list">
           <li class="nav__item" data-menu="ati"><a href="about.html" class="nav__link" data-i18n="nav.ati">ATI</a></li>
           <li class="nav__item" data-menu="products"><a href="products-semiconductor.html" class="nav__link" data-i18n="nav.products">Product &amp; Applications</a></li>
-          <li class="nav__item" data-menu="solutions"><a href="index.html#solutions" class="nav__link" data-i18n="nav.solutions">Solution &amp; Services</a></li>
-          <li class="nav__item" data-menu="support"><a href="index.html#news" class="nav__link" data-i18n="nav.support">Customer Support</a></li>
+          <li class="nav__item" data-menu="solutions"><a href="solutions-ai.html" class="nav__link" data-i18n="nav.solutions">Solution &amp; Services</a></li>
+          <li class="nav__item" data-menu="support"><a href="news.html" class="nav__link" data-i18n="nav.support">Customer Support</a></li>
         </ul>
         <div class="mega-menu" id="mega-menu">
           <div class="mega-menu__inner">
@@ -58,22 +59,22 @@
             </div>
             <div class="mega-menu__column" data-col="solutions">
               <ul>
-                <li><a href="index.html#solutions" data-i18n="mega.aiTech">AI Technology</a></li>
-                <li><a href="index.html#solutions" data-i18n="mega.customSol">Custom Solutions</a></li>
-                <li><a href="index.html#solutions" data-i18n="mega.services">Services</a></li>
+                <li><a href="solutions-ai.html" data-i18n="mega.aiTech">AI Technology</a></li>
+                <li><a href="solutions-ai.html#howto" data-i18n="mega.customSol">Custom Solutions</a></li>
+                <li><a href="services.html" data-i18n="mega.services">Services</a></li>
               </ul>
             </div>
             <div class="mega-menu__column" data-col="support">
               <ul>
-                <li><a href="index.html#news" data-i18n="mega.news">News</a></li>
-                <li><a href="index.html#contact" data-i18n="mega.contactUs">Contact Us</a></li>
-                <li><a href="#" data-i18n="mega.faq">FAQ</a></li>
+                <li><a href="news.html" data-i18n="mega.news">News</a></li>
+                <li><a href="contact.html" data-i18n="mega.contactUs">Contact Us</a></li>
+                <li><a href="faq.html" data-i18n="mega.faq">FAQ</a></li>
               </ul>
             </div>
           </div>
         </div>
       </nav>
-      <a href="index.html#contact" class="header__cta" data-i18n="nav.contact">문의하기</a>
+      <a href="contact.html" class="header__cta" data-i18n="nav.contact">문의하기</a>
       <button class="header__mobile-toggle" id="mobile-toggle" aria-label="메뉴 열기">
         <span></span><span></span><span></span>
       </button>
@@ -86,16 +87,16 @@
       <div class="prod-banner prod-banner--full" data-animate>
         <img class="prod-banner__img" src="assets/images/wafer-hero-banner.jpg" alt="ATI 웨이퍼 검사 장비" decoding="async">
         <div class="prod-banner__content">
-          <h1 class="prod-banner__title">Wafer Inspection &amp; Measurement</h1>
+          <h1 class="prod-banner__title" data-i18n="prodList.wafer.title">Wafer Inspection &amp; Measurement</h1>
           <div class="prod-banner__tabs">
-            <a class="prod-banner__tab is-active" href="products-wafer.html">Wafer Inspection &amp; Measurement</a>
+            <a class="prod-banner__tab is-active" href="products-wafer.html" data-i18n="prodTab.wafer">Wafer Inspection &amp; Measurement</a>
             <span class="prod-banner__dot"></span>
-            <a class="prod-banner__tab" href="products-reticle.html">Mask Inspection &amp; Measurement</a>
+            <a class="prod-banner__tab" href="products-reticle.html" data-i18n="prodTab.reticle">Mask Inspection &amp; Measurement</a>
             <span class="prod-banner__dot"></span>
-            <a class="prod-banner__tab" href="products-package.html">Package Inspection &amp; Measurement</a>
+            <a class="prod-banner__tab" href="products-package.html" data-i18n="prodTab.package">Package Inspection &amp; Measurement</a>
           </div>
           <a class="prod-banner__scroll" href="#wafer-list">
-            Scroll Down
+            <span data-i18n="prodTab.scroll">Scroll Down</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
           </a>
         </div>
@@ -111,8 +112,8 @@
             <div class="prod-card__media"><img src="assets/images/product-c1-photo.png" alt="C1 웨이퍼 검사 장비" loading="lazy" decoding="async"></div>
             <div class="prod-card__body">
               <h3 class="prod-card__name">C1</h3>
-              <p class="prod-card__desc">High resolution &amp; rapid wafer color inspection system</p>
-              <a href="product-c1.html" class="prod-card__btn">Product View
+              <p class="prod-card__desc" data-i18n="wcard.c1.desc">High resolution &amp; rapid wafer color inspection system</p>
+              <a href="product-c1.html" class="prod-card__btn" data-i18n="wcard.viewBtn">Product View
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
             </div>
@@ -122,8 +123,8 @@
             <div class="prod-card__media"><img src="assets/images/product-tidal.png" alt="TIDAL 웨이퍼 검사 장비" loading="lazy" decoding="async"></div>
             <div class="prod-card__body">
               <h3 class="prod-card__name">TIDAL</h3>
-              <p class="prod-card__desc">Wafer inspection &amp; measurement</p>
-              <a href="product-tidal.html" class="prod-card__btn">Product View
+              <p class="prod-card__desc" data-i18n="wcard.tidal.desc">Wafer inspection &amp; measurement</p>
+              <a href="product-tidal.html" class="prod-card__btn" data-i18n="wcard.viewBtn">Product View
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
             </div>
@@ -133,8 +134,8 @@
             <div class="prod-card__media"><img src="assets/images/product-c1-photo.png" alt="SGM 웨이퍼 응력 측정 장비" loading="lazy" decoding="async"></div>
             <div class="prod-card__body">
               <h3 class="prod-card__name">SGM</h3>
-              <p class="prod-card__desc">Wafer Stress Gauge System</p>
-              <a href="#" class="prod-card__btn">Product View
+              <p class="prod-card__desc" data-i18n="wcard.sgm.desc">Wafer Stress Gauge System</p>
+              <a href="product-sgm.html" class="prod-card__btn" data-i18n="wcard.viewBtn">Product View
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
             </div>
@@ -144,8 +145,8 @@
             <div class="prod-card__media"><img src="assets/images/product-c1-photo.png" alt="D1 웨이퍼 검사 장비" loading="lazy" decoding="async"></div>
             <div class="prod-card__body">
               <h3 class="prod-card__name">D1</h3>
-              <p class="prod-card__desc">Wafer inspection &amp; measurement</p>
-              <a href="#" class="prod-card__btn">Product View
+              <p class="prod-card__desc" data-i18n="wcard.d1.desc">Acoustic Internal Inspection System</p>
+              <a href="product-d1.html" class="prod-card__btn" data-i18n="wcard.viewBtn">Product View
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
             </div>
@@ -155,8 +156,8 @@
             <div class="prod-card__media"><img src="assets/images/product-c1-photo.png" alt="OAK3 웨이퍼 검사 장비" loading="lazy" decoding="async"></div>
             <div class="prod-card__body">
               <h3 class="prod-card__name">OAK3</h3>
-              <p class="prod-card__desc">Wafer inspection &amp; measurement</p>
-              <a href="#" class="prod-card__btn">Product View
+              <p class="prod-card__desc" data-i18n="wcard.oak3.desc">Auto Microscope System</p>
+              <a href="product-oak3.html" class="prod-card__btn" data-i18n="wcard.viewBtn">Product View
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
             </div>
@@ -166,8 +167,8 @@
             <div class="prod-card__media"><img src="assets/images/product-c1-photo.png" alt="PUTTER2 웨이퍼 검사 장비" loading="lazy" decoding="async"></div>
             <div class="prod-card__body">
               <h3 class="prod-card__name">PUTTER2</h3>
-              <p class="prod-card__desc">Wafer inspection &amp; measurement</p>
-              <a href="#" class="prod-card__btn">Product View
+              <p class="prod-card__desc" data-i18n="wcard.putter2.desc">Automated Bump Shear System</p>
+              <a href="product-putter2.html" class="prod-card__btn" data-i18n="wcard.viewBtn">Product View
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
             </div>
@@ -177,8 +178,8 @@
             <div class="prod-card__media"><img src="assets/images/product-c1-photo.png" alt="CAMELLIA3 웨이퍼 검사 장비" loading="lazy" decoding="async"></div>
             <div class="prod-card__body">
               <h3 class="prod-card__name">CAMELLIA3</h3>
-              <p class="prod-card__desc">Wafer inspection &amp; measurement</p>
-              <a href="#" class="prod-card__btn">Product View
+              <p class="prod-card__desc" data-i18n="wcard.cam3.desc">Wafer Backside Thin Film Thickness Measurement</p>
+              <a href="product-camellia3.html" class="prod-card__btn" data-i18n="wcard.viewBtn">Product View
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
             </div>
@@ -220,17 +221,17 @@
           <div class="footer__column">
             <h4 class="footer__column-title" data-i18n="footer.col.solutions">Solution &amp; Services</h4>
             <ul>
-              <li><a href="index.html#solutions" data-i18n="mega.aiTech">AI Technology</a></li>
-              <li><a href="index.html#solutions" data-i18n="mega.customSol">Custom Solutions</a></li>
-              <li><a href="index.html#solutions" data-i18n="mega.services">Services</a></li>
+              <li><a href="solutions-ai.html" data-i18n="mega.aiTech">AI Technology</a></li>
+              <li><a href="solutions-ai.html#howto" data-i18n="mega.customSol">Custom Solutions</a></li>
+              <li><a href="services.html" data-i18n="mega.services">Services</a></li>
             </ul>
           </div>
           <div class="footer__column">
             <h4 class="footer__column-title" data-i18n="footer.col.support">Customer Support</h4>
             <ul>
-              <li><a href="index.html#news" data-i18n="mega.news">News</a></li>
-              <li><a href="index.html#contact" data-i18n="mega.contactUs">Contact Us</a></li>
-              <li><a href="#" data-i18n="mega.faq">FAQ</a></li>
+              <li><a href="news.html" data-i18n="mega.news">News</a></li>
+              <li><a href="contact.html" data-i18n="mega.contactUs">Contact Us</a></li>
+              <li><a href="faq.html" data-i18n="mega.faq">FAQ</a></li>
             </ul>
           </div>
           <div class="footer__side">

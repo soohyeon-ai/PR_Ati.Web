@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/images/ATI_favicon.ico">
+
+  <title>AI Technology | Solution &amp; Services | Advanced Technology Inc.</title>
+  <meta name="description" content="ATI AI System for PCB Industry — 딥러닝·컴퓨터 비전 기반의 자동 결함 분류(ADC)와 비닝으로 PCB·패키지 검사의 정확도를 높이고 셋업·양산 램프 타임을 단축합니다.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://example.com/solutions-ai.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ATI - Advanced Technology Inc.">
+  <meta property="og:title" content="AI Technology - Advanced Technology Inc.">
+  <meta property="og:description" content="딥러닝 기반 지능형 결함 검출·분류로 PCB·패키지 검사를 혁신하는 ATI AI System.">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="theme-color" content="#05081c">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/controls.css">
+  <link rel="stylesheet" href="css/solutions-ai.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="sai-page">
+  <!-- 스크롤에 따라 남색 → 흰색으로 전환되는 전역 배경 레이어 -->
+  <div class="sai-backdrop" id="sai-backdrop" aria-hidden="true">
+    <div class="sai-backdrop__glow" id="sai-glow">
+      <div class="sai-backdrop__pattern"></div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation (메인과 동일) -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img class="header__logo-img header__logo-img--dark" src="assets/images/ATI_Logo_white.png" alt="ATI - Advanced Technology Inc. 로고">
+        <img class="header__logo-img header__logo-img--light" src="assets/images/ATI_Logo_default.png" alt="" aria-hidden="true">
+      </a>
+      <nav class="header__nav" id="main-nav">
+        <ul class="nav__list">
+          <li class="nav__item" data-menu="ati"><a href="about.html" class="nav__link" data-i18n="nav.ati">ATI</a></li>
+          <li class="nav__item" data-menu="products"><a href="products-semiconductor.html" class="nav__link" data-i18n="nav.products">Product &amp; Applications</a></li>
+          <li class="nav__item" data-menu="solutions"><a href="solutions-ai.html" class="nav__link" data-i18n="nav.solutions">Solution &amp; Services</a></li>
+          <li class="nav__item" data-menu="support"><a href="news.html" class="nav__link" data-i18n="nav.support">Customer Support</a></li>
+        </ul>
+        <div class="mega-menu" id="mega-menu">
+          <div class="mega-menu__inner">
+            <div class="mega-menu__column" data-col="ati">
+              <ul>
+                <li><a href="about.html" data-i18n="footer.aboutAti">About ATI</a></li>
+                <li><a href="about.html#history" data-i18n="footer.history">History</a></li>
+                <li><a href="about.html#esg" data-i18n="footer.esg">ESG</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__column" data-col="products">
+              <ul>
+                <li><a href="products-semiconductor.html" data-i18n="footer.semiApp">Semiconductor Applications</a></li>
+                <li><a href="products-pcb.html" data-i18n="footer.pcbApp">PCB Applications</a></li>
+                <li><a href="products-wafer.html" data-i18n="footer.wafer">Wafer</a></li>
+                <li><a href="products-reticle.html" data-i18n="footer.reticle">Reticle</a></li>
+                <li><a href="products-package.html" data-i18n="footer.package">Package</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__column" data-col="solutions">
+              <ul>
+                <li><a href="solutions-ai.html" data-i18n="mega.aiTech">AI Technology</a></li>
+                <li><a href="solutions-ai.html#howto" data-i18n="mega.customSol">Custom Solutions</a></li>
+                <li><a href="services.html" data-i18n="mega.services">Services</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__column" data-col="support">
+              <ul>
+                <li><a href="news.html" data-i18n="mega.news">News</a></li>
+                <li><a href="contact.html" data-i18n="mega.contactUs">Contact Us</a></li>
+                <li><a href="faq.html" data-i18n="mega.faq">FAQ</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <a href="contact.html" class="header__cta" data-i18n="nav.contact">문의하기</a>
+      <button class="header__mobile-toggle" id="mobile-toggle" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="sai">
+    <!-- ===================== HERO ===================== -->
+    <section class="sai-hero" id="sai-hero">
+      <div class="sai-hero__track" id="sai-hero-track">
+        <div class="sai-hero__stage">
+          <h1 class="sai-fill" id="sai-hero-title" data-fill-en="AI System for PCB Industry" data-fill-ko="PCB 산업을 위한 AI 시스템"></h1>
+          <div class="sai-hero__desc">
+            <p data-i18n="sai.hero.desc1">ATI&rsquo;s AI technology brings intelligent defect detection and classification to the PCB and package inspection process. Our AI System is designed to improve accuracy, reduce false calls, and speed up recipe setup and production ramp.</p>
+            <p data-i18n="sai.hero.desc2">Leveraging deep learning and computer vision, the system learns from your process and defect libraries to classify defects consistently and support ADC (Automatic Defect Classification) and binning. This reduces dependency on manual review and helps production lines achieve higher throughput and better yield management.</p>
+          </div>
+
+          <div class="sai-hero__visual" data-animate="fade-up">
+            <img src="assets/images/ai-world-map.png" alt="ATI AI System — 글로벌 PCB·패키지 검사 네트워크" decoding="async">
+            <span class="sai-orb sai-orb--hero" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KEY CAPABILITIES ===================== -->
+    <section class="sai-cap">
+      <div class="sai-cap__inner">
+        <header class="sai-cap__head" data-animate="fade-up">
+          <h2 class="sai-cap__title" data-i18n="sai.cap.title">Key Capabilities</h2>
+          <p class="sai-cap__lead" data-i18n="sai.cap.lead">
+            ATI develops AI and software in-house as part of our five pillars of excellence, ensuring that our
+            inspection systems deliver not only hardware precision but also intelligent, adaptable software that
+            meets the evolving needs of the semiconductor and PCB industries.
+          </p>
+        </header>
+
+        <div class="sai-cap__grid">
+          <article class="sai-cap__card" data-animate="fade-up">
+            <span class="sai-cap__icon">
+              <img src="assets/images/ri_ai.png" alt="" width="50" height="50">
+            </span>
+            <p data-i18n="sai.cap.c1">Deep-learning-based defect classification and binning for PCB and package inspection</p>
+          </article>
+
+          <article class="sai-cap__card" data-animate="fade-up" style="--delay:80ms">
+            <span class="sai-cap__icon">
+              <img src="assets/images/material-symbols_time-auto-outline-rounded.png" alt="" width="50" height="50">
+            </span>
+            <p data-i18n="sai.cap.c2">Recipe auto-creation and adaptive algorithms to shorten setup and ramp time</p>
+          </article>
+
+          <article class="sai-cap__card" data-animate="fade-up" style="--delay:40ms">
+            <span class="sai-cap__icon">
+              <img src="assets/images/majesticons_analytics-line.png" alt="" width="50" height="50">
+            </span>
+            <p data-i18n="sai.cap.c3">Scalable architecture to support multiple inspection tools and factory analytics</p>
+          </article>
+
+          <article class="sai-cap__card" data-animate="fade-up" style="--delay:120ms">
+            <span class="sai-cap__icon">
+              <img src="assets/images/oui_integration-general.png" alt="" width="50" height="50">
+            </span>
+            <p data-i18n="sai.cap.c4">Integration with ATI inspection platforms for seamless data flow and review</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TAILORED EQUIPMENT ===================== -->
+    <section class="sai-tailored" id="tailored">
+      <div class="sai-tailored__inner">
+        <div class="sai-tailored__media">
+          <figure class="sai-tile sai-tile--a">
+            <div class="sai-tile__card">
+              <img src="assets/images/ai-machines.png" alt="Machines" loading="lazy" decoding="async">
+            </div>
+            <span class="sai-orb sai-orb--card" aria-hidden="true"></span>
+            <figcaption data-i18n="sai.tail.cap2">Machines</figcaption>
+          </figure>
+          <figure class="sai-tile sai-tile--b">
+            <div class="sai-tile__card">
+              <img src="assets/images/ai-tailored-equipment.png" alt="Tailored Equipment" loading="lazy" decoding="async">
+            </div>
+            <span class="sai-orb sai-orb--card" aria-hidden="true"></span>
+            <figcaption data-i18n="sai.tail.cap1">Tailored Equipment</figcaption>
+          </figure>
+          <figure class="sai-tile sai-tile--c">
+            <div class="sai-tile__card">
+              <img src="assets/images/ai-software.png" alt="Software" loading="lazy" decoding="async">
+            </div>
+            <span class="sai-orb sai-orb--card" aria-hidden="true"></span>
+            <figcaption data-i18n="sai.tail.cap3">Software</figcaption>
+          </figure>
+        </div>
+
+        <header class="sai-tailored__head" data-animate="fade-up">
+          <h2 class="sai-tailored__title" data-i18n="sai.tail.title">Tailored Equipment, Machines, and Software</h2>
+          <p class="sai-tailored__lead" data-i18n-html="sai.tail.lead">
+            ATI provides custom equipment, machines, and software solutions to meet each customer&rsquo;s specific
+            process and technical requirements. Our ability to deliver these solutions is rooted in the five pillars
+            of excellence described on our
+            <a href="about.html#vision" target="_self">Mission and Vision</a>
+            page: Optics, Software &amp; AI, Automation, Inspection, and Metrology. Because we develop all core
+            technologies in-house, we can adapt and integrate every part of the system to your needs.
+          </p>
+        </header>
+      </div>
+    </section>
+
+    <!-- ===================== HOW WE ACHIEVE (white) ===================== -->
+    <section class="sai-howto" id="howto">
+      <div class="sai-howto__inner">
+        <div class="sai-howto__col" data-animate="fade-up">
+          <h2 class="sai-howto__title" data-i18n="sai.howto.title">How We Achieve Custom Solutions</h2>
+          <div class="sai-howto__lead-card" data-i18n="sai.howto.leadcard">
+            End-to-end customized solutions powered by in-house core technologies
+          </div>
+          <div class="sai-howto__body-card" data-i18n-html="sai.howto.body">
+            <p>
+              ATI provides custom equipment, machines, and software solutions to meet each customer&rsquo;s specific
+              process and technical requirements. Our ability to deliver these solutions is rooted in the five pillars
+              of excellence described on our <a href="about.html#vision">Mission and Vision</a> page:
+            </p>
+            <p>Optics, Software &amp; AI, Automation, Inspection, and Metrology. Because we develop all core
+              technologies in-house, we can adapt and integrate every part of the system to your needs.</p>
+          </div>
+        </div>
+
+        <div class="sai-howto__mosaic" data-animate="fade-up">
+          <article class="sai-pillar">
+            <img src="assets/images/hero-chip.jpg" alt="Optics" loading="lazy">
+            <div class="sai-pillar__body">
+              <h3 class="sai-pillar__name sai-pillar__name--bold" data-i18n="sai.pillar.optics">Optics:</h3>
+              <p data-i18n="sai.pillar.opticsDesc">Custom illumination, magnification, and optical paths can be designed for your wafer size, defect types, or package geometry. This ensures that image quality and capture conditions match your process.</p>
+            </div>
+          </article>
+          <article class="sai-pillar">
+            <img src="assets/images/ai-software.png" alt="Software &amp; AI" loading="lazy">
+            <div class="sai-pillar__body">
+              <h3 class="sai-pillar__name sai-pillar__name--bold" data-i18n="sai.pillar.software">Software &amp; AI</h3>
+              <p data-i18n="sai.pillar.softwareDesc">Custom illumination, magnification, and optical paths can be designed for your wafer size, defect types, or package geometry. This ensures that image quality and capture conditions match your process.</p>
+            </div>
+          </article>
+          <article class="sai-pillar">
+            <img src="assets/images/ai-machines.png" alt="Automation" loading="lazy">
+            <div class="sai-pillar__body">
+              <h3 class="sai-pillar__name" data-i18n="sai.pillar.automation">Automation</h3>
+              <p data-i18n="sai.pillar.automationDesc">Handling configurations&mdash;load ports, cassettes, magazines, stack-to-stack, and interfaces with your existing automation&mdash;can be specified and integrated so that the tool fits seamlessly into your line.</p>
+            </div>
+          </article>
+          <article class="sai-pillar">
+            <img src="assets/images/cat-pcb-card.jpg" alt="Inspection" loading="lazy">
+            <div class="sai-pillar__body">
+              <h3 class="sai-pillar__name" data-i18n="sai.pillar.inspection">Inspection</h3>
+              <p data-i18n="sai.pillar.inspectionDesc">Inspection strategies (bright field, dark field, 2D/3D, color, IR, etc.) and sensitivity targets can be tuned for your applications, from front-end wafer to advanced package and PCB.</p>
+            </div>
+          </article>
+          <article class="sai-pillar">
+            <img src="assets/images/cat-wafer-bg.jpg" alt="Metrology" loading="lazy">
+            <div class="sai-pillar__body">
+              <h3 class="sai-pillar__name" data-i18n="sai.pillar.metrology">Metrology</h3>
+              <p data-i18n="sai.pillar.metrologyDesc">Measurement algorithms and reporting (dimensions, heights, profiles, optical density, etc.) can be customized to match your specs and quality metrics.</p>
+            </div>
+          </article>
+          <a class="sai-pillar sai-pillar--cta" href="products-semiconductor.html">
+            <div class="sai-pillar__body">
+              <h3 class="sai-pillar__name" data-i18n="sai.pillar.viewProduct">View Product</h3>
+              <span class="sai-pillar__arrow">
+                <svg viewBox="0 0 24 24" width="54" height="54" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (메인 index.html 하단과 동일) -->
+    <section class="contact" id="contact">
+      <div class="contact__inner">
+        <div class="contact__text" data-animate="fade-up">
+          <p class="contact__label" data-i18n="contact.label">Contact us</p>
+          <h2 class="contact__heading" data-i18n="contact.heading">Partner with ATI for semiconductor and PCB inspection solutions</h2>
+          <a href="contact.html" class="contact__btn" data-i18n="contact.btn">문의하기 &rarr;</a>
+        </div>
+        <div class="contact__visual" data-animate="zoom-in">
+          <div class="contact__visual-frame">
+            <img src="assets/images/about-stack-2.jpg" alt="ATI 반도체 클린룸 검사 라인" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer__panel">
+      <div class="footer__card">
+        <div class="footer__top">
+          <a href="index.html" class="footer__logo" aria-label="ATI - Advanced Technology Inc.">
+            <img src="assets/images/ATI_Logo_white.png" alt="ATI - Advanced Technology Inc. 로고">
+          </a>
+        </div>
+        <div class="footer__links">
+          <div class="footer__column">
+            <h4 class="footer__column-title" data-i18n="footer.col.ati">ATI</h4>
+            <ul>
+              <li><a href="about.html" data-i18n="footer.aboutAti">About ATI</a></li>
+              <li><a href="about.html#history" data-i18n="footer.history">History</a></li>
+              <li><a href="about.html#esg" data-i18n="footer.esg">ESG</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title" data-i18n="footer.col.products">Products</h4>
+            <ul>
+              <li><a href="products-semiconductor.html" data-i18n="footer.semiApp">Semiconductor Applications</a></li>
+              <li><a href="products-wafer.html" data-i18n="footer.wafer">Wafer</a></li>
+              <li><a href="products-reticle.html" data-i18n="footer.reticle">Reticle</a></li>
+              <li><a href="products-package.html" data-i18n="footer.package">Package</a></li>
+              <li><a href="products-pcb.html" data-i18n="footer.pcbApp">PCB Applications</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title" data-i18n="footer.col.solutions">Solution &amp; Services</h4>
+            <ul>
+              <li><a href="solutions-ai.html" data-i18n="mega.aiTech">AI Technology</a></li>
+              <li><a href="solutions-ai.html#howto" data-i18n="mega.customSol">Custom Solutions</a></li>
+              <li><a href="services.html" data-i18n="mega.services">Services</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title" data-i18n="footer.col.support">Customer Support</h4>
+            <ul>
+              <li><a href="news.html" data-i18n="mega.news">News</a></li>
+              <li><a href="contact.html" data-i18n="mega.contactUs">Contact Us</a></li>
+              <li><a href="faq.html" data-i18n="mega.faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer__side">
+            <div class="footer__lang">
+              <select id="lang-select" class="footer__lang-select" aria-label="언어 선택 / Language">
+                <option value="ko">KR</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
+            <a href="https://www.youtube.com/@advancedtechnologyinc.4357/" target="_blank" rel="noopener noreferrer" class="footer__youtube" aria-label="ATI YouTube">
+              <img src="assets/images/youtube logo 07.png" alt="YouTube">
+            </a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__contact">
+            <span><strong data-i18n="footer.address">Address</strong> <span data-i18n="footer.addressValue">41, Songdo Mirae-ro, Yeonsu-gu, Incheon, South Korea</span></span>
+            <span><strong data-i18n="footer.phone">Phone.</strong> 82-32-851-5301~4</span>
+            <span><strong data-i18n="footer.fax">Fax.</strong> 82-32-851-5301~5</span>
+          </div>
+          <p class="footer__copyright" data-i18n="footer.copyright">&copy; Copyright 2018 - 2026 | Advanced Technology Inc. | All Rights Reserved | Powered by Sales Team</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-top" id="scroll-top">
+    <button class="scroll-top__btn scroll-top__btn--up" id="scroll-top-btn" aria-label="맨 위로">
+      <svg width="15" height="31" viewBox="0 0 9.512 16.44" fill="none">
+        <path d="M9.133 9.133L1.826 16.44 0 14.614l6.394-6.394L0 1.826 1.826 0l7.307 7.307a1.22 1.22 0 010 1.826z" fill="white"/>
+      </svg>
+    </button>
+    <button class="scroll-top__btn scroll-top__btn--down" id="scroll-down-btn" aria-label="아래로">
+      <svg width="15" height="31" viewBox="0 0 9.512 16.44" fill="none">
+        <path d="M9.133 9.133L1.826 16.44 0 14.614l6.394-6.394L0 1.826 1.826 0l7.307 7.307a1.22 1.22 0 010 1.826z" fill="#E51415"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/controls/navigation.js"></script>
+  <script src="js/controls/scroll-animations.js"></script>
+  <script src="js/controls/fullpage-scroll.js"></script>
+  <script src="js/controls/i18n.js"></script>
+  <script src="js/controls/solutions-ai.js"></script>
+</body>
+</html>

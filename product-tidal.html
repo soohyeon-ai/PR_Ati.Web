@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -29,14 +29,15 @@
   <header class="header" id="header">
     <div class="header__inner">
       <a href="index.html" class="header__logo">
-        <img src="assets/images/ati-logo-wide.png" alt="ATI - Advanced Technology Inc. 로고">
+        <img class="header__logo-img header__logo-img--dark" src="assets/images/ATI_Logo_white.png" alt="ATI - Advanced Technology Inc. 로고">
+        <img class="header__logo-img header__logo-img--light" src="assets/images/ATI_Logo_default.png" alt="" aria-hidden="true">
       </a>
       <nav class="header__nav" id="main-nav">
         <ul class="nav__list">
           <li class="nav__item" data-menu="ati"><a href="about.html" class="nav__link" data-i18n="nav.ati">ATI</a></li>
           <li class="nav__item" data-menu="products"><a href="products-semiconductor.html" class="nav__link" data-i18n="nav.products">Product &amp; Applications</a></li>
-          <li class="nav__item" data-menu="solutions"><a href="index.html#solutions" class="nav__link" data-i18n="nav.solutions">Solution &amp; Services</a></li>
-          <li class="nav__item" data-menu="support"><a href="index.html#news" class="nav__link" data-i18n="nav.support">Customer Support</a></li>
+          <li class="nav__item" data-menu="solutions"><a href="solutions-ai.html" class="nav__link" data-i18n="nav.solutions">Solution &amp; Services</a></li>
+          <li class="nav__item" data-menu="support"><a href="news.html" class="nav__link" data-i18n="nav.support">Customer Support</a></li>
         </ul>
         <div class="mega-menu" id="mega-menu">
           <div class="mega-menu__inner">
@@ -58,22 +59,22 @@
             </div>
             <div class="mega-menu__column" data-col="solutions">
               <ul>
-                <li><a href="index.html#solutions" data-i18n="mega.aiTech">AI Technology</a></li>
-                <li><a href="index.html#solutions" data-i18n="mega.customSol">Custom Solutions</a></li>
-                <li><a href="index.html#solutions" data-i18n="mega.services">Services</a></li>
+                <li><a href="solutions-ai.html" data-i18n="mega.aiTech">AI Technology</a></li>
+                <li><a href="solutions-ai.html#howto" data-i18n="mega.customSol">Custom Solutions</a></li>
+                <li><a href="services.html" data-i18n="mega.services">Services</a></li>
               </ul>
             </div>
             <div class="mega-menu__column" data-col="support">
               <ul>
-                <li><a href="index.html#news" data-i18n="mega.news">News</a></li>
-                <li><a href="index.html#contact" data-i18n="mega.contactUs">Contact Us</a></li>
-                <li><a href="#" data-i18n="mega.faq">FAQ</a></li>
+                <li><a href="news.html" data-i18n="mega.news">News</a></li>
+                <li><a href="contact.html" data-i18n="mega.contactUs">Contact Us</a></li>
+                <li><a href="faq.html" data-i18n="mega.faq">FAQ</a></li>
               </ul>
             </div>
           </div>
         </div>
       </nav>
-      <a href="index.html#contact" class="header__cta" data-i18n="nav.contact">문의하기</a>
+      <a href="contact.html" class="header__cta" data-i18n="nav.contact">문의하기</a>
       <button class="header__mobile-toggle" id="mobile-toggle" aria-label="메뉴 열기">
         <span></span><span></span><span></span>
       </button>
@@ -88,11 +89,11 @@
         <div class="prod-banner__content">
           <h1 class="prod-banner__title">TIDAL</h1>
           <div class="prod-banner__tabs">
-            <a class="prod-banner__tab is-active" href="products-wafer.html">Wafer Inspection &amp; Measurement</a>
+            <a class="prod-banner__tab is-active" href="products-wafer.html" data-i18n="prodTab.wafer">Wafer Inspection &amp; Measurement</a>
             <span class="prod-banner__dot"></span>
-            <a class="prod-banner__tab" href="products-reticle.html">Mask Inspection &amp; Measurement</a>
+            <a class="prod-banner__tab" href="products-reticle.html" data-i18n="prodTab.reticle">Mask Inspection &amp; Measurement</a>
             <span class="prod-banner__dot"></span>
-            <a class="prod-banner__tab" href="products-package.html">Package Inspection &amp; Measurement</a>
+            <a class="prod-banner__tab" href="products-package.html" data-i18n="prodTab.package">Package Inspection &amp; Measurement</a>
           </div>
           <a class="prod-banner__scroll" href="#tidal-overview">
             Scroll Down
@@ -110,37 +111,37 @@
         </div>
         <div class="prod-overview__card" data-animate style="--delay:120ms">
           <p class="prod-overview__name">TIDAL</p>
-          <p class="prod-overview__sub"><span class="accent">Wafer</span> Inspection and measurement system for semiconductor manufacturing.</p>
-          <p class="prod-overview__lead">High resolution &amp; rapid wafer color inspection system</p>
+          <p class="prod-overview__sub" data-i18n-html="tidal.sub"><span class="accent">Wafer</span> Inspection and measurement system for semiconductor manufacturing.</p>
+          <p class="prod-overview__lead" data-i18n="tidal.lead">High resolution &amp; rapid wafer color inspection system</p>
           <div class="prod-overview__divider"></div>
           <ul class="prod-features-list">
             <li>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.3l-4-4 1.4-1.42 2.6 2.6 5.6-5.6 1.4 1.42-7 7z"/></svg>
-              High-speed Colorful Inspection for Next-generation HBM4/4E
+              <span data-i18n="tidal.feat1">High-speed Colorful Inspection for Next-generation HBM4/4E</span>
             </li>
             <li>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.3l-4-4 1.4-1.42 2.6 2.6 5.6-5.6 1.4 1.42-7 7z"/></svg>
-              High Quality TDI Image (Mono/Color)
+              <span data-i18n="tidal.feat2">High Quality TDI Image (Mono/Color)</span>
             </li>
             <li>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.3l-4-4 1.4-1.42 2.6 2.6 5.6-5.6 1.4 1.42-7 7z"/></svg>
-              High Accuracy Stage, Real-time Auto Focus
+              <span data-i18n="tidal.feat3">High Accuracy Stage, Real-time Auto Focus</span>
             </li>
             <li>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.3l-4-4 1.4-1.42 2.6 2.6 5.6-5.6 1.4 1.42-7 7z"/></svg>
-              Vision Review System
+              <span data-i18n="tidal.feat4">Vision Review System</span>
             </li>
             <li>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.3l-4-4 1.4-1.42 2.6 2.6 5.6-5.6 1.4 1.42-7 7z"/></svg>
-              Bright Field &amp; Dark Field Inspection
+              <span data-i18n="tidal.feat5">Bright Field &amp; Dark Field Inspection</span>
             </li>
             <li>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.3l-4-4 1.4-1.42 2.6 2.6 5.6-5.6 1.4 1.42-7 7z"/></svg>
-              Multi Field Illumination
+              <span data-i18n="tidal.feat6">Multi Field Illumination</span>
             </li>
             <li>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.3l-4-4 1.4-1.42 2.6 2.6 5.6-5.6 1.4 1.42-7 7z"/></svg>
-              Capable of Full-wafer Inspection
+              <span data-i18n="tidal.feat7">Capable of Full-wafer Inspection</span>
             </li>
           </ul>
         </div>
@@ -150,25 +151,9 @@
     <!-- Product Features -->
     <section class="prod-feat prod-section">
       <div class="prod-inner">
-        <h2 class="prod-feat__title" data-animate>Product Features</h2>
-        <div class="prod-feat__grid">
-          <div class="prod-feat__img" data-animate>
-            <img src="assets/images/c1-features.png" alt="TIDAL 검사 영역별 기능 다이어그램 (Front / Edge / Backside)" loading="lazy" decoding="async">
-          </div>
-          <div class="prod-feat__cols" data-animate style="--delay:120ms">
-            <div class="prod-feat__block">
-              <h3>Front</h3>
-              <p>Inspection : Die to die &amp; Surface; Bright &amp; Dark Field; IR Inspection (Void, Burnt). Measurement: Bump Height; Chip Warpage; IR Measurement (Accuracy). Application: Whole Wafer Image; ADC (Binning/Classification); RAC (Recipe Auto Create); Result Review System.</p>
-            </div>
-            <div class="prod-feat__block">
-              <h3>Edge</h3>
-              <p>Inspection : Crack, Scratch, Chipping; Discoloration, Foreign Materials. Measurement: PEL (Process End Line); Profile, Depth, Width. Application: ADC (Binning/Classification).</p>
-            </div>
-            <div class="prod-feat__block">
-              <h3>Backside</h3>
-              <p>Inspection : Color Inspection (3-Channel); Relative Algorithm. Application: ADC (Binning/Classification); Auto Focus &amp; Illumination.</p>
-            </div>
-          </div>
+        <h2 class="prod-feat__title" data-animate data-i18n="prod.featTitle">Product Features</h2>
+        <div class="prod-feat__full-img" data-animate>
+          <img src="assets/images/tidal-features.png" alt="TIDAL Product Features — AI Defect Classification, AI Object Detection, TIDAL System Structure, Software Specification" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -205,17 +190,17 @@
           <div class="footer__column">
             <h4 class="footer__column-title" data-i18n="footer.col.solutions">Solution &amp; Services</h4>
             <ul>
-              <li><a href="index.html#solutions" data-i18n="mega.aiTech">AI Technology</a></li>
-              <li><a href="index.html#solutions" data-i18n="mega.customSol">Custom Solutions</a></li>
-              <li><a href="index.html#solutions" data-i18n="mega.services">Services</a></li>
+              <li><a href="solutions-ai.html" data-i18n="mega.aiTech">AI Technology</a></li>
+              <li><a href="solutions-ai.html#howto" data-i18n="mega.customSol">Custom Solutions</a></li>
+              <li><a href="services.html" data-i18n="mega.services">Services</a></li>
             </ul>
           </div>
           <div class="footer__column">
             <h4 class="footer__column-title" data-i18n="footer.col.support">Customer Support</h4>
             <ul>
-              <li><a href="index.html#news" data-i18n="mega.news">News</a></li>
-              <li><a href="index.html#contact" data-i18n="mega.contactUs">Contact Us</a></li>
-              <li><a href="#" data-i18n="mega.faq">FAQ</a></li>
+              <li><a href="news.html" data-i18n="mega.news">News</a></li>
+              <li><a href="contact.html" data-i18n="mega.contactUs">Contact Us</a></li>
+              <li><a href="faq.html" data-i18n="mega.faq">FAQ</a></li>
             </ul>
           </div>
           <div class="footer__side">
