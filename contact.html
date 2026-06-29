@@ -141,6 +141,22 @@
               </div>
             </div>
 
+            <!-- 관심 제품 -->
+            <div class="inquiry-field">
+              <label class="inquiry-field__label" data-i18n="inquiry.label.product">관심 제품</label>
+              <div class="inquiry-field__input-area inquiry-field__input-area--product">
+                <select class="inquiry-field__select inquiry-field__select--half" id="inq-product-category" name="product_category" aria-label="제품 영역 선택">
+                  <option value="">제품 영역 선택</option>
+                  <option value="wafer">Wafer</option>
+                  <option value="reticle">Reticle</option>
+                  <option value="package">Package</option>
+                </select>
+                <select class="inquiry-field__select inquiry-field__select--half" id="inq-product-name" name="product_name" aria-label="제품 선택" disabled>
+                  <option value="">제품 선택</option>
+                </select>
+              </div>
+            </div>
+
             <!-- 연락처 -->
             <div class="inquiry-field">
               <label class="inquiry-field__label" for="inq-phone-prefix"><span data-i18n="inquiry.label.phone">연락처</span> <span class="inquiry-field__required">*</span></label>
@@ -320,6 +336,49 @@
         });
       }
 
+      var productCategorySelect = document.getElementById('inq-product-category');
+      var productNameSelect = document.getElementById('inq-product-name');
+      var productMap = {
+        wafer: [
+          { value: 'C1', label: 'C1' },
+          { value: 'TIDAL', label: 'TIDAL' },
+          { value: 'SGM', label: 'SGM' },
+          { value: 'D1', label: 'D1' },
+          { value: 'OAK3', label: 'OAK3' },
+          { value: 'PUTTER2', label: 'PUTTER2' },
+          { value: 'CAMELLIA3', label: 'CAMELLIA3' }
+        ],
+        reticle: [
+          { value: 'SUN2', label: 'SUN2' },
+          { value: 'VEGA-D', label: 'VEGA-D' },
+          { value: 'VEGA-P', label: 'VEGA-P' },
+          { value: 'ROE-1000', label: 'ROE-1000' },
+          { value: 'TRITON', label: 'TRITON' }
+        ],
+        package: [
+          { value: 'IVY2', label: 'IVY2' },
+          { value: 'CYPRESS2', label: 'CYPRESS2' },
+          { value: 'PINE2-S', label: 'PINE2-S' },
+          { value: 'JEDI3', label: 'JEDI3' },
+          { value: 'ASIS', label: 'ASIS' },
+          { value: 'LMS', label: 'LMS' }
+        ]
+      };
+      if (productCategorySelect && productNameSelect) {
+        productCategorySelect.addEventListener('change', function () {
+          var products = productMap[productCategorySelect.value] || [];
+          productNameSelect.innerHTML = '<option value="">제품 선택</option>';
+          products.forEach(function (p) {
+            var opt = document.createElement('option');
+            opt.value = p.value;
+            opt.textContent = p.label;
+            productNameSelect.appendChild(opt);
+          });
+          productNameSelect.disabled = !productCategorySelect.value;
+          productNameSelect.value = '';
+        });
+      }
+
       var form = document.getElementById('inquiry-form');
       if (form) {
         form.addEventListener('submit', function (e) {
@@ -333,6 +392,10 @@
           alert('문의가 등록되었습니다. 감사합니다.');
           form.reset();
           if (domainInput) { domainInput.readOnly = false; }
+          if (productNameSelect) {
+            productNameSelect.innerHTML = '<option value="">제품 선택</option>';
+            productNameSelect.disabled = true;
+          }
         });
       }
     });

@@ -220,6 +220,19 @@
   line-height: 52px;
 }
 
+/* 관심 제품 영역 */
+.inquiry-field__input-area--product {
+  gap: 12px;
+}
+.inquiry-field__select--half {
+  flex: 1;
+  min-width: 0;
+}
+.inquiry-field__select--half:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* ===================== PRIVACY ===================== */
 .inquiry-form__section--privacy {
   margin-bottom: 40px;
@@ -364,6 +377,13 @@
   }
   .inquiry-field__at {
     padding: 0 6px;
+  }
+
+  .inquiry-field__input-area--product {
+    flex-wrap: wrap;
+  }
+  .inquiry-field__input-area--product .inquiry-field__select--half {
+    flex: 1 1 100%;
   }
 
   .inquiry-field__input-area--phone {

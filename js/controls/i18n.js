@@ -400,6 +400,32 @@ const I18n = (function () {
     'svc.domestic.title': { en: 'Domestic (Korea) Offices', ko: '국내 사업장' },
     'svc.overseas.title': { en: 'Overseas Offices', ko: '해외 사업장' },
 
+    'svc.dom.dongtan.name':     { en: 'Dongtan', ko: '동탄' },
+    'svc.dom.dongtan.addr':     { en: '108, Dongtanjiseong-ro, Hwaseong-si, Gyeonggi-do, South Korea', ko: '경기도 화성시 동탄지성로 108' },
+    'svc.dom.pyeongtaek.name':  { en: 'Pyeongtaek', ko: '평택' },
+    'svc.dom.pyeongtaek.addr':  { en: '27, Godeokyeoyeom 7-gil, Pyeongtaek-si, Gyeonggi-do, South Korea', ko: '경기도 평택시 고덕여염7길 27' },
+    'svc.dom.icheon.name':      { en: 'Icheon', ko: '이천' },
+    'svc.dom.icheon.addr':      { en: '2088, Gyeongchung-daero, Bubal-eup, Icheon-si, Gyeonggi-do, South Korea', ko: '경기도 이천시 부발읍 경충대로 2088' },
+    'svc.dom.cheonan.name':     { en: 'Cheonan', ko: '천안' },
+    'svc.dom.cheonan.addr':     { en: '184, Handeul 1-ro, Seobuk-gu, Cheonan-si, Chungcheongnam-do, South Korea', ko: '충청남도 천안시 서북구 한들1로 184' },
+    'svc.dom.cheongju.name':    { en: 'Cheongju', ko: '청주' },
+    'svc.dom.cheongju.addr':    { en: '55, Daenong-ro, Heungdeok-gu, Cheongju-si, Chungcheongbuk-do, South Korea', ko: '충청북도 청주시 흥덕구 대농로 55' },
+
+    'svc.ovs.usa.name':         { en: 'USA', ko: '미국' },
+    'svc.ovs.usa.addr':         { en: '1290 Reamwood Ave, Sunnyvale, CA, USA', ko: '1290 Reamwood Ave, Sunnyvale, CA, USA' },
+    'svc.ovs.china.name':       { en: 'China', ko: '중국' },
+    'svc.ovs.china.addr':       { en: 'Room 1002, No.12, Zhonghang City #579 Qianjin East Road, Kunshan City, Jiangsu Province, China', ko: '중국 장쑤성 쿤산시 첸진동로 579호 중항시티 12동 1002호' },
+    'svc.ovs.singapore.name':   { en: 'Singapore', ko: '싱가포르' },
+    'svc.ovs.singapore.addr':   { en: '1 Raffles Place, #20-02, One Raffles Place, Singapore 048616', ko: '1 Raffles Place, #20-02, One Raffles Place, Singapore 048616' },
+    'svc.ovs.vietnam.name':     { en: 'Vietnam', ko: '베트남' },
+    'svc.ovs.vietnam.addr':     { en: 'Han Viet Tower No 203, Minh Khai Str., Hai Ba Trung Dist., Hanoi, Vietnam', ko: '베트남 하노이 하이바쯩구 민카이로 한비엣타워 203호' },
+    'svc.ovs.japan.name':       { en: 'Japan', ko: '일본' },
+    'svc.ovs.japan.addr':       { en: 'Komaki castle heights Room no. 211, 2-10 Komaki, Komaki-city, Aichi-Pref, Japan', ko: '일본 아이치현 코마키시 코마키 2-10 코마키캐슬하이츠 211호' },
+    'svc.ovs.taiwan.name':      { en: 'Taiwan', ko: '대만' },
+    'svc.ovs.taiwan.addr':      { en: 'No. 81, Sec. 3, Huanbei Rd., Zhubei City, Hsinchu 302, Taiwan', ko: '대만 신주현 주베이시 환베이로 3단 81호' },
+    'svc.ovs.india.name':       { en: 'India', ko: '인도' },
+    'svc.ovs.india.addr':       { en: 'ATI India (established 2024)', ko: 'ATI 인도 (2024년 설립)' },
+
     // ===== Product List Pages (tabs / cards) =====
     'prodList.wafer.title':  { en: 'Wafer Inspection & Measurement', ko: '웨이퍼 검사 및 계측' },
     'prodList.reticle.title': { en: 'Mask Inspection & Measurement', ko: '마스크 검사 및 계측' },
@@ -550,7 +576,68 @@ const I18n = (function () {
     'triton.feat2': { en: 'Reflectance Measurement', ko: '반사율 측정' },
     'triton.feat3': { en: 'Transmittance Measurement', ko: '투과율 측정' },
     'triton.feat4': { en: 'Phase Shift Measurement', ko: '위상 변이 측정' },
-    'triton.feat5': { en: 'Optical Density Measurement', ko: '광학 밀도 측정' }
+    'triton.feat5': { en: 'Optical Density Measurement', ko: '광학 밀도 측정' },
+
+    // ===== Package Product List (카드) =====
+    'pcard.intro':         { en: 'ATI package inspection and measurement systems cover FC-BGA, CSP, SiP, and PCB applications — from automated final vision inspection and sorting to laser marking and ASIS series solutions.', ko: 'ATI 패키지 검사 및 계측 시스템은 FC-BGA, CSP, SiP, PCB 응용 분야를 다루며 — 자동 최종 비전 검사, 소팅, 레이저 마킹, ASIS 시리즈 솔루션을 제공합니다.' },
+    'pcard.ivy2.desc':     { en: 'Package inspection & measurement', ko: '패키지 검사 및 계측' },
+    'pcard.cypress2.desc': { en: 'Package inspection & measurement', ko: '패키지 검사 및 계측' },
+    'pcard.pine2s.desc':   { en: 'Automated final vision inspection', ko: '자동 최종 비전 검사' },
+    'pcard.jedi3.desc':    { en: 'FC-BGA inspection & sorting', ko: 'FC-BGA 검사 및 소팅' },
+    'pcard.asis.desc':     { en: 'ASIS series', ko: 'ASIS 시리즈' },
+    'pcard.lms.desc':      { en: 'PCB laser marking system', ko: 'PCB 레이저 마킹 시스템' },
+
+    // ===== IVY2 =====
+    'ivy2.sub':   { en: 'Wire Bonding & Die Attach Inspection System', ko: '와이어 본딩 & 다이 어태치 검사 시스템' },
+    'ivy2.lead':  { en: 'Package inspection and measurement system.', ko: '패키지 검사 및 계측 시스템입니다.' },
+    'ivy2.feat1': { en: 'Multi-Layer Die & Wire Bonding Inspection', ko: '멀티 레이어 다이 & 와이어 본딩 검사' },
+    'ivy2.feat2': { en: '2D: Die Inspection, Wire / Stitch / Ball Inspection', ko: '2D: 다이 검사, 와이어 / 스티치 / 볼 검사' },
+    'ivy2.feat3': { en: '3D: Die Tilt, Wire Edge Height, Wire Loop Height Measurement', ko: '3D: 다이 틸트, 와이어 엣지 높이, 와이어 루프 높이 측정' },
+    'ivy2.feat4': { en: 'Inspection for Each Process Order', ko: '각 공정 순서별 검사' },
+    'ivy2.feat5': { en: 'Inspection for NAND Die', ko: 'NAND 다이 검사' },
+    'ivy2.feat6': { en: 'Inspect Dies of Different Heights', ko: '높이가 다른 다이 검사' },
+
+    // ===== CYPRESS2 =====
+    'cypress2.sub':   { en: 'Advanced Package Inspection & Measurement System', ko: '고급 패키지 검사 및 계측 시스템' },
+    'cypress2.lead':  { en: 'Package inspection and measurement system.', ko: '패키지 검사 및 계측 시스템입니다.' },
+    'cypress2.feat1': { en: '2D Inspection with High Resolution', ko: '고해상도 2D 검사' },
+    'cypress2.feat2': { en: '3D Height Measurement of the Attached Components', ko: '부착 부품의 3D 높이 측정' },
+    'cypress2.feat3': { en: 'Multiple Handling of Various Types of Packaging', ko: '다양한 유형의 패키징 다중 핸들링' },
+    'cypress2.feat4': { en: 'JEDEC tray, SUS tray, Strip, Molded PCB', ko: 'JEDEC 트레이, SUS 트레이, 스트립, 몰딩 PCB' },
+
+    // ===== PINE2-S =====
+    'pine2s.sub':   { en: 'Automated Final Vision Inspection', ko: '자동 최종 비전 검사' },
+    'pine2s.lead':  { en: 'Automated final vision inspection system.', ko: '자동 최종 비전 검사 시스템입니다.' },
+    'pine2s.feat1': { en: 'Cu Post, SOP, BOC, CSP, SiP, PBGA, FC-BOC, FC-CSP, FC-BGA Products', ko: 'Cu Post, SOP, BOC, CSP, SiP, PBGA, FC-BOC, FC-CSP, FC-BGA 제품' },
+    'pine2s.feat2': { en: 'MGZ-to-MGZ / MGZ-to-STACK / STACK-to-STACK / STACK-to-MGZ', ko: 'MGZ-to-MGZ / MGZ-to-STACK / STACK-to-STACK / STACK-to-MGZ' },
+    'pine2s.feat3': { en: 'Selectable Optics Configuration (2D+3D / 2D Only / 3D Only)', ko: '선택 가능한 광학 구성 (2D+3D / 2D Only / 3D Only)' },
+    'pine2s.feat4': { en: 'Selectable Handling Configuration (Only STACK / STACK + Magazine)', ko: '선택 가능한 핸들링 구성 (Only STACK / STACK + Magazine)' },
+    'pine2s.feat5': { en: 'Auto Picker / Auto Tilt Boat', ko: '오토 피커 / 오토 틸트 보트' },
+
+    // ===== JEDI3 =====
+    'jedi3.sub':   { en: 'FC-BGA Inspection & Sorting System', ko: 'FC-BGA 검사 및 소팅 시스템' },
+    'jedi3.lead':  { en: 'JEDI3 delivers inspection and sorting for FC-BGA and advanced package applications.', ko: 'JEDI3는 FC-BGA 및 첨단 패키지 응용 분야의 검사 및 소팅을 제공합니다.' },
+    'jedi3.feat1': { en: 'Supports Standard JEDEC Specifications', ko: '표준 JEDEC 사양 지원' },
+    'jedi3.feat2': { en: 'Physical Unit Aligner (Shaker Type)', ko: '물리적 유닛 정렬기 (쉐이커 타입)' },
+    'jedi3.feat3': { en: 'Cleaning System', ko: '클리닝 시스템' },
+    'jedi3.feat4': { en: 'Sorter Machine (Optional)', ko: '소터 머신 (옵션)' },
+
+    // ===== ASIS Series =====
+    'asis.sub':   { en: 'Automated Sorting & Inspection System', ko: '자동 소팅 및 검사 시스템' },
+    'asis.lead':  { en: 'PCB and package inspection solutions from ATI.', ko: 'ATI의 PCB 및 패키지 검사 솔루션입니다.' },
+    'asis.feat1': { en: 'Automated Sorting & Inspection System for Cu Post, SOP, BOC, CSP, UTC, SiP, PBGA, FC-BOC, FC-CSP, FC-BGA Products', ko: 'Cu Post, SOP, BOC, CSP, UTC, SiP, PBGA, FC-BOC, FC-CSP, FC-BGA 제품용 자동 소팅 및 검사 시스템' },
+    'asis.feat2': { en: '40~120mm(W) x 100~310mm(L): Auto Picker', ko: '40~120mm(W) x 100~310mm(L): 오토 피커' },
+    'asis.feat3': { en: '2D Barcode Reading', ko: '2D 바코드 리딩' },
+    'asis.feat4': { en: 'OCR Reading', ko: 'OCR 리딩' },
+
+    // ===== LMS =====
+    'lms.sub':   { en: 'Laser Marking System', ko: '레이저 마킹 시스템' },
+    'lms.lead':  { en: 'High-speed laser marking for PCB and package applications.', ko: 'PCB 및 패키지 응용을 위한 고속 레이저 마킹.' },
+    'lms.feat1': { en: 'Dual 5W Green Laser Marking System for Cu Post, SOP, BOC, SCP, SIP, PBGA, FC-BOC, FC-CSP, FC-BGA Products', ko: 'Cu Post, SOP, BOC, SCP, SIP, PBGA, FC-BOC, FC-CSP, FC-BGA 제품용 듀얼 5W 그린 레이저 마킹 시스템' },
+    'lms.feat2': { en: 'PCB X-Out Laser Marking', ko: 'PCB X-Out 레이저 마킹' },
+    'lms.feat3': { en: 'PCB 2D Barcode Laser Marking', ko: 'PCB 2D 바코드 레이저 마킹' },
+    'lms.feat4': { en: 'Wafer ID Marking', ko: '웨이퍼 ID 마킹' },
+    'lms.feat5': { en: 'Wafer Die Marking', ko: '웨이퍼 다이 마킹' }
   };
 
   let currentLang = DEFAULT_LANG;
