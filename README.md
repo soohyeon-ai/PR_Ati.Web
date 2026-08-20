@@ -1,6 +1,6 @@
 # ATI - Advanced Technology Inc. Website
 
-반도체 검사 및 계측 장비 전문 기업 **ATI (Advanced Technology Inc.)** 의 공식 웹사이트입니다.
+반도체 검사 및 계측 장비 전문 기업 **ATI (Advanced Technology Inc.)** 의 웹사이트입니다.
 
 ## 기술 스택
 
